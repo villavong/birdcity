@@ -1,0 +1,30 @@
+<header id="main_header" class="cf">
+	<div class="wrapper_wide">
+		<%= link_to "BirdsInThatCity", root_path, id: "logo" %>
+		<nav>
+			<ul>
+				<% unless student_signed_in? %>
+					<li><%= link_to "Log In", new_student_session_path %></li>
+					<li><%= link_to "Sign Up", new_student_registration_path %></li>
+				<% else %>
+
+					<li><%= link_to "Explore City&School", "/students/" %></li>
+
+
+
+					<li><%= link_to "Beppu/Oita", "/beppuposts/" %></li>
+					<li><%= link_to "Tokyo/Seoul/China", "/eastposts/" %></li>
+
+					<li><%= link_to "SouthEastAsia", "/southposts/" %></li>
+					<li><%= link_to "Europe/OtherCities", "/otherposts/" %></li>
+
+
+
+          <li><%= link_to "Update Profile", edit_student_registration_path %></li>
+					<li><%= link_to "Sign Out", destroy_student_session_path, method: :delete %></li>
+
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</header>

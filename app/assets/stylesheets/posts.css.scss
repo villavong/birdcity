@@ -1,0 +1,122 @@
+$white: #FFFFFF;
+$highlight: #EE7964;
+$dark: #2C3135;
+$light: #FFB0A2;
+$titleblue: #3462AB;
+$contentblue: #A2C6FF;
+$buttonblue: #3B669E;
+
+
+#posts {
+	background: white;
+	padding: 2em 5%;
+	border-radius: .5em;
+	.post {
+		margin: 1em 0;
+		padding: 1em 0;
+		border-bottom: 1px solid #D1d1d1;
+		.title {
+			margin: 0;
+			a {
+				color: #397CAC;
+				text-decoration: none;
+				font-weight: 100;
+				font-size: 1.25rem;
+			}
+		}
+		.date {
+			margin-top: .25rem;
+			font-size: 0.9rem;
+			color: #B2BAC2;
+		}
+	}
+}
+
+.button {
+	background: $buttonblue;
+
+	color: $white;
+	border: 1px solid $white;
+	padding: .5em 1em;
+	border-radius: 0.2em;
+	text-decoration: none;
+	margin-right: 2%;
+}
+
+#post_content {
+	background: $white;
+	padding: 2em 5%;
+	border-radius: .5em;
+	img {
+		width: 20rem;
+		height: 20rem;
+		max-width: 100%;
+		border-radius: .3rem;
+	}
+	h1 {
+		font-weight: 500;
+		font-size: 1.5em;
+		color: $titleblue;
+		margin-top: 0;
+	}
+	p {
+		color: $contentblue;
+		font-size: 1rem;
+		font-weight: 100;
+		line-height: 1.5;
+	}
+	#comments {
+		.comment {
+			border-bottom: 1px solid #d1d1d1;
+			padding-bottom: 1em;
+			margin-bottom: 1em;
+			.content {
+				width: 75%;
+				float: left;
+			}
+			.buttons {
+				width: 25%;
+				float: left;
+				font-size: .8em;
+				text-align: right;
+				padding-top: 1.5em;
+				a {
+					color: #397CAC;
+					border: 1px solid #397CAC;
+					padding: .5em 1em;
+					border-radius: 0.2em;
+					text-decoration: none;
+					margin-right: 2%;
+				}
+			}
+			.comment_content {
+				margin: 0;
+				padding: 0;
+			}
+			.comment_author {
+				color: #397CAC;
+				margin-top: .5rem;
+				font-size: 0.6em;
+				font-weight: 700;
+			}
+			#edit_button {
+				padding-top: 1em;
+			}
+		}
+		input[type="submit"] {
+			background: $buttonblue;
+			border: none;
+			color: white;
+			font-weight: 100;
+			padding: .5em 1em;
+			border-radius: .2em;
+		}
+		textarea {
+			width: 100%;
+			min-height: 200px;
+			border: 1px solid #d1d1d1;
+			border-radius: .2em;
+			margin: 1em 0;
+		}
+	}
+}

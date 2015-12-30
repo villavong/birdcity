@@ -1,0 +1,37 @@
+<% unless student_signed_in? %>
+<% else %>
+  <%= render 'layouts/header'; %>
+
+<% end %>
+
+
+<div id="background">
+  <header class="cf">
+    <div class="wrapper_wide">
+      <% unless student_signed_in? %>
+        <a href="/" id="logo">BirdsInThatCity</a>
+
+      <% else %>
+
+      <% end %>
+
+        <nav class = "cf">
+          <ul class = "cf">
+            <% unless student_signed_in? %>
+              <li><%= link_to "Log In", new_student_session_path %></li>
+              <li><%= link_to "Sign Up", new_student_registration_path %></li>
+
+            <% else %>
+            <% end %>
+          </ul>
+        </nav>
+    </div>
+  </header>
+
+  <div class="wrapper_skinny">
+    <h1>BirdsInThatCity is a <br>Forum for exchange and local university students</h1>
+    <br/><br/>
+
+  </div>
+</div>
+<br/><br/>

@@ -1,0 +1,62 @@
+$white: #FFFFFF;
+$highlight: #EE7964;
+$dark: #2C3135;
+$light: #EDEFF5;
+$titleblue: #3462AB;
+$contentblue: #A2C6FF;
+$buttonblue: #3B669E;
+
+#background {
+  height: 70vh;
+  background-image: image-url("homepage.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  header {
+    color: $dark;
+    padding: 1.5rem 0;
+    #logo {
+      float: left;
+      text-transform: none;
+      font-weight: 700;
+      color: $dark;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    nav {
+      float: right;
+
+      ul {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        list-style: none;
+        li {
+          display: inline-block;
+          margin-left: 3.5rem;
+          position: relative;
+          a {
+            color: $dark;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.7rem;
+            &:hover {
+              color: $highlight;
+            }
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    color: $white;
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 7rem 0 2rem 0;
+  }
+  .button {
+    min-width: 30px;
+    display: inline-block;
+    margin: 0 2rem 0 0;
+  }
+}
