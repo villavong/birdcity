@@ -11,21 +11,34 @@ class Student < ActiveRecord::Base
 
   #  acts_as_taggable
 
+
+    # has_many :eastposts
+    # has_many :eastcomments
+    #
+    has_many :beppuposts
+    has_many :beppucomments
+    #
+    #
+    # has_many :southposts
+    # has_many :southcomments
+    #
+    # has_many :otherposts
+    # has_many :othercomments
    def self.search(query)
        if query.present?
          # where("name like :q", q: "%#{query}%")
          # where("name ilike :q or description ilike :q or ship ilike :q", q: "%#{query}%")
          # where("name @@ :q or description @@ :q or ship @@ :q", q: query)
-        #  rank = <<-RANK
-          #  ts_rank(to_tsvector(name), plainto_tsquery(#{sanitize(query)})) +
-          #  ts_rank(to_tsvector(school), plainto_tsquery(#{sanitize(query)})) +
-          #  ts_rank(to_tsvector(city), plainto_tsquery(#{sanitize(query)})) +
-          #  ts_rank(to_tsvector(major), plainto_tsquery(#{sanitize(query)})) +
-          #  ts_rank(to_tsvector(nationality), plainto_tsquery(#{sanitize(query)})) +
-          #  ts_rank(to_tsvector(email), plainto_tsquery(#{sanitize(query)})) +
-          #  ts_rank(to_tsvector(introduction), plainto_tsquery(#{sanitize(query)}))
-        #  RANK
-         where("name @@ :q or school @@ :q or city @@ :q or major @@ :q or nationality @@ :q or introduction @@ :q or email @@ :q", q: query)
+         rank = <<-RANK
+           ts_rank(to_tsvector(name), plainto_tsquery(#{sanitize(query)})) +
+           ts_rank(to_tsvector(school), plainto_tsquery(#{sanitize(query)})) +
+           ts_rank(to_tsvector(city), plainto_tsquery(#{sanitize(query)})) +
+           ts_rank(to_tsvector(major), plainto_tsquery(#{sanitize(query)})) +
+           ts_rank(to_tsvector(nationality), plainto_tsquery(#{sanitize(query)})) +
+           ts_rank(to_tsvector(email), plainto_tsquery(#{sanitize(query)})) +
+           ts_rank(to_tsvector(introduction), plainto_tsquery(#{sanitize(query)}))
+         RANK
+         where("name @@ :q or school @@ :q or city @@ :q or major @@ :q or nationality @@ :q or introduction @@ :q or email @@ :q", q: query).order("#{rank} desc")
        else
          all
        end

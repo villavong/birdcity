@@ -49,7 +49,7 @@ body {
 #notice_wrapper {
   width:100%;
   position: absolute;
-  background: rgba(208, 103, 82, 0.85);
+  background: rgba(68, 129, 208, 0.65);
   z-index: 999;
   p {
     color: $white;
@@ -293,6 +293,17 @@ textarea {
   border-radius: 0.2em;
   text-decoration: none;
   margin-right: 2%;
+  float: right;
+
+}
+.button_new {
+  color: $white;
+  border: 1px solid $white;
+  padding: .5em 1em;
+  border-radius: 0.2em;
+  text-decoration: none;
+  margin-right: 2%;
+  float: right;
 }
 
 #photo {

@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230103964) do
+ActiveRecord::Schema.define(version: 20151230161108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beppucomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "beppupost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "beppucomments", ["beppupost_id"], name: "index_beppucomments_on_beppupost_id", using: :btree
+  add_index "beppucomments", ["student_id"], name: "index_beppucomments_on_student_id", using: :btree
+
+  create_table "beppuposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "beppuposts", ["student_id"], name: "index_beppuposts_on_student_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -71,4 +92,7 @@ ActiveRecord::Schema.define(version: 20151230103964) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+  add_foreign_key "beppucomments", "beppuposts"
+  add_foreign_key "beppucomments", "students"
+  add_foreign_key "beppuposts", "students"
 end

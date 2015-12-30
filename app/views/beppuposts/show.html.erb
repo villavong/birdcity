@@ -1,0 +1,39 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @beppupost.title %>
+    </h1>
+    <p>
+      <%= @beppupost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @beppupost.beppucomments.count %>
+      Comments
+    </h2>
+        <%= render @beppupost.beppucomments %>
+        <h3>Reply to thread</h3>
+        <%= render "beppucomments/form" %>
+  </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Edit Post", edit_beppupost_path(@beppupost), class: "button" %>
+    <%= link_to "Delete Post", beppupost_path(@beppupost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+  </div>
+  
+
+</div>

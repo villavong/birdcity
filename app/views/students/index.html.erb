@@ -40,16 +40,15 @@
           <li>
             <% if student.photo.present? %>
               <%= image_tag student.photo.url(:medium) %>
-
-
             <% end %>
 
 
 
-
             <div class="podcast_overview">
+							<h2><%= birdtype_display(@student.birdtype) %></h2>
+
               <h2><%= student.name %></h2>
-              <h2><%= student.school %></h2>
+              <h2><%= truncate(student.school, length: 15) %></h2>
               <h2>Now in : <%= student.city %></h2>
 
 

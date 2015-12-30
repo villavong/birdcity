@@ -1,0 +1,14 @@
+<div class="comment cf">
+  <div class="content">
+    <p class="comment_content">
+      <%= beppucomment.comment %>
+    </p>
+    <p class="comment_author">
+      <%= beppucomment.student.email %>
+    </p>
+  </div>
+  <div id="edit_button">
+    <%= link_to "Edit", edit_beppupost_beppucomment_path(beppucomment.beppupost, beppucomment) %>
+    <%= link_to "Delete", [beppucomment.beppupost, beppucomment], method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>

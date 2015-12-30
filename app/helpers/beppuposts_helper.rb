@@ -1,0 +1,2 @@
+module BeppupostsHelper
+end
