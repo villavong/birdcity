@@ -21,7 +21,8 @@ gem 'html-pipeline', '~> 1.11.0'
 gem 'github-markdown', '~> 0.6.7'
 gem 'simple_form', '~> 3.2'
 
-
+gem 'elasticsearch-model' # for elasticsearch
+gem 'elasticsearch-rails'
 group :development, :test do
   gem 'byebug'
 end
@@ -33,6 +34,7 @@ group :development do
 end
 group :production do
   gem 'rails_12factor'
+  gem 'bonsai-elasticsearch-rails'
 end
 
 ruby "2.2.1"
