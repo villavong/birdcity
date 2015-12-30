@@ -15,14 +15,11 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'aws-sdk', '< 2.0'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
-gem 'searchkick', '~> 1.0', '>= 1.0.1'
 gem 'jquery-ui-rails'
 gem 'html-pipeline', '~> 1.11.0'
 gem 'github-markdown', '~> 0.6.7'
 gem 'simple_form', '~> 3.2'
 
-gem 'elasticsearch-model' # for elasticsearch
-gem 'elasticsearch-rails'
 group :development, :test do
   gem 'byebug'
 end
@@ -34,7 +31,6 @@ group :development do
 end
 group :production do
   gem 'rails_12factor'
-  gem 'bonsai-elasticsearch-rails'
 end
 
 ruby "2.2.1"
