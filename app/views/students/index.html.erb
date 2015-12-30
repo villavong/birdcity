@@ -21,9 +21,9 @@
 
 <h1> Search </h1><h4>Type School or City </h4>
 
-<%= form_tag students_path, method: :get do %>
+<%= form_tag('/students', method: :get) do %>
   <p>
-    <%= text_field_tag :q, nil, placeholder: "Search" %>
+    <%= text_field_tag :search, nil, placeholder: "Search" %>
     <br><br>
     <p><%= submit_tag("Search") %></p>
 
