@@ -24,7 +24,7 @@
 				<% @beppuposts.each do |beppupost| %>
 					<li class="cf">
 						<div class="episode_thumbnail">
-							<%= image_tag beppupost.photo.url(:medium) %>
+							<%= link_to image_tag(beppupost.photo.url(:medium)), beppupost %>
 
 						</div>
 						<div class="episode_overview">

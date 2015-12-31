@@ -24,7 +24,7 @@
 				<% @eastposts.each do |eastpost| %>
 					<li class="cf">
 						<div class="episode_thumbnail">
-							<%= image_tag eastpost.photo.url(:medium) %>
+							<%= link_to image_tag(eastpost.photo.url(:medium)), eastpost %>
 
 						</div>
 						<div class="episode_overview">

@@ -24,7 +24,7 @@
 				<% @otherposts.each do |otherpost| %>
 					<li class="cf">
 						<div class="episode_thumbnail">
-							<%= image_tag otherpost.photo.url(:medium) %>
+							<%= link_to image_tag(otherpost.photo.url(:medium)), otherpost %>
 
 						</div>
 						<div class="episode_overview">
