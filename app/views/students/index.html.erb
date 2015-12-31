@@ -20,14 +20,14 @@
 
 
 
-<h1> Search </h1><h4>Type School or City </h4>
+<h1> Search </h1><h4>Type School or City - ( Total Students : <%= Student.all.count %> )
+ </h4>
 
 <%= form_tag('/students', method: :get) do %>
   <p>
     <%= text_field_tag :search, nil, placeholder: "Search" %>
     <br><br>
-    <p><%= submit_tag("Search") %></p>
-
+    <p><%= submit_tag("Search") %> </p>
   </p>
 <% end %>
 </div>

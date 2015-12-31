@@ -10,12 +10,12 @@
   	<div id="student_content" class = "cf">
 
   			<h2 class = "title"><%= @student.name %></h2>
-        <p><%= @student.email %></p>
+        <p>Email : <%= @student.email %></p>
   			<strong><%= birdtype_display(@student.birdtype) %></strong>
-  	    <p class = "date"><%= @student.school %></p>
-  			<p class = "date"><%= @student.major %></p>
-  			<p class = "date"><%= @student.city %></p>
-    		<p><%= markdownify @student.introduction %></p>
+  	    <p class = "date">School : <%= @student.school %></p>
+  			<p class = "date">Major : <%= @student.major %></p>
+  			<p class = "date">Now in : <%= @student.city %></p>
+    		<p>Self Intro <br><%= markdownify @student.introduction %></p>
 
   	</div>
   	<div id="student_photo">
