@@ -18,6 +18,8 @@ gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 gem 'jquery-ui-rails'
 gem 'html-pipeline', '~> 1.11.0'
 gem 'github-markdown', '~> 0.6.7'
+gem 'gemoji', '~> 2.1.0'
+gem 'sanitize', '~> 3.0.3'
 gem 'simple_form', '~> 3.2'
 gem 'local_time', '~> 1.0.0'
 

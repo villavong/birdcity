@@ -1,0 +1,14 @@
+<div class="comment cf">
+  <div class="content">
+    <p class="comment_content">
+      <%= markdownify southcomment.comment %>
+    </p>
+    <p class="comment_author">
+      <%= southcomment.student.email %>
+    </p>
+  </div>
+  <div id="edit_button">
+    <%= link_to "Edit", edit_southpost_southcomment_path(southcomment.southpost, southcomment) %>
+    <%= link_to "Delete", [southcomment.southpost, southcomment], method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>

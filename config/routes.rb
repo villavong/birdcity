@@ -14,7 +14,18 @@ Rails.application.routes.draw do
   resources :beppuposts do
     resources :beppucomments
   end
+  
+  resources :eastposts do
+      resources :eastcomments
+    end
 
+  resources :southposts do
+    resources :southcomments
+  end
+
+  resources :otherposts do
+    resources :othercomments
+  end
 
 
 end

@@ -60,16 +60,14 @@ $buttonblue: #3B669E;
 		margin-top: 0;
 	}
 	p {
-		color: $contentblue;
+		color: $titleblue;
 		font-size: 1rem;
-		font-weight: 100;
+		font-weight: 600;
 		line-height: 1.5;
 	}
 	#comments {
 		.comment {
 			border-bottom: 1px solid #d1d1d1;
-			padding-bottom: 1em;
-			margin-bottom: 1em;
 			.content {
 				width: 75%;
 				float: left;
@@ -94,10 +92,10 @@ $buttonblue: #3B669E;
 				padding: 0;
 			}
 			.comment_author {
-				color: #397CAC;
+				color: $buttonblue;
 				margin-top: .5rem;
 				font-size: 0.6em;
-				font-weight: 700;
+				font-weight: 300;
 			}
 			#edit_button {
 				padding-top: 1em;

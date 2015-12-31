@@ -1,0 +1,25 @@
+<div id="banner" class="podcasts_banner">
+
+</div>
+
+
+
+<div class="cf">
+  <div class="wrapper">
+
+  	<div id="student_content" class = "cf">
+
+  			<h2 class = "title"><%= @student.name %></h2>
+        <p><%= @student.email %></p>
+  			<strong><%= birdtype_display(@student.birdtype) %></strong>
+  	    <p class = "date"><%= @student.school %></p>
+  			<p class = "date"><%= @student.major %></p>
+  			<p class = "date"><%= @student.city %></p>
+    		<p><%= @student.introduction %></p>
+
+  	</div>
+  	<div id="student_photo">
+      <div><%= image_tag @student.photo.url(:medium) %></div>
+  	</div>
+  </div>
+</div>

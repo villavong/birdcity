@@ -42,14 +42,12 @@
     color: #3462AB;
     margin-top: 0; }
   #post_content p {
-    color: #A2C6FF;
+    color: #3462AB;
     font-size: 1rem;
-    font-weight: 100;
+    font-weight: 600;
     line-height: 1.5; }
   #post_content #comments .comment {
-    border-bottom: 1px solid #d1d1d1;
-    padding-bottom: 1em;
-    margin-bottom: 1em; }
+    border-bottom: 1px solid #d1d1d1; }
     #post_content #comments .comment .content {
       width: 75%;
       float: left; }
@@ -70,10 +68,10 @@
       margin: 0;
       padding: 0; }
     #post_content #comments .comment .comment_author {
-      color: #397CAC;
+      color: #3B669E;
       margin-top: .5rem;
       font-size: 0.6em;
-      font-weight: 700; }
+      font-weight: 300; }
     #post_content #comments .comment #edit_button {
       padding-top: 1em; }
   #post_content #comments input[type="submit"] {

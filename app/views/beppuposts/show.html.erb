@@ -17,7 +17,7 @@
     <%= image_tag @beppupost.photo.url(:medium) %>
 
     <p>
-      <%= @beppupost.content %>
+      <%= markdownify @beppupost.content %>
     </p>
     <div id="comments">
     <h2>
@@ -27,14 +27,20 @@
         <%= render @beppupost.beppucomments %>
         <h3>Reply to thread</h3>
         <%= render "beppucomments/form" %>
-  </div>
+    </div>
 
 
     <br/>
     <hr/>
     <br/>
-    <%= link_to "Edit Post", edit_beppupost_path(@beppupost), class: "button" %>
+    <%= link_to "Back", beppuposts_path, class: "button" %>
     <%= link_to "Delete Post", beppupost_path(@beppupost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+    <%= link_to "Edit Post", edit_beppupost_path(@beppupost), class: "button" %>
+    <%= link_to "New Post", new_beppupost_path, class: "button button_highlight" %>
+
+    <div class="wrapper_skinny">
+  	</div>
   </div>
 
 

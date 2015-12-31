@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231045455) do
+ActiveRecord::Schema.define(version: 20151231071406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,81 @@ ActiveRecord::Schema.define(version: 20151231045455) do
   end
 
   add_index "beppuposts", ["student_id"], name: "index_beppuposts_on_student_id", using: :btree
+
+  create_table "eastcomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "eastpost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "eastcomments", ["eastpost_id"], name: "index_eastcomments_on_eastpost_id", using: :btree
+  add_index "eastcomments", ["student_id"], name: "index_eastcomments_on_student_id", using: :btree
+
+  create_table "eastposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "eastposts", ["student_id"], name: "index_eastposts_on_student_id", using: :btree
+
+  create_table "othercomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "otherpost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "othercomments", ["otherpost_id"], name: "index_othercomments_on_otherpost_id", using: :btree
+  add_index "othercomments", ["student_id"], name: "index_othercomments_on_student_id", using: :btree
+
+  create_table "otherposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "otherposts", ["student_id"], name: "index_otherposts_on_student_id", using: :btree
+
+  create_table "southcomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "southpost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "southcomments", ["southpost_id"], name: "index_southcomments_on_southpost_id", using: :btree
+  add_index "southcomments", ["student_id"], name: "index_southcomments_on_student_id", using: :btree
+
+  create_table "southposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "southposts", ["student_id"], name: "index_southposts_on_student_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -99,4 +174,13 @@ ActiveRecord::Schema.define(version: 20151231045455) do
   add_foreign_key "beppucomments", "beppuposts"
   add_foreign_key "beppucomments", "students"
   add_foreign_key "beppuposts", "students"
+  add_foreign_key "eastcomments", "eastposts"
+  add_foreign_key "eastcomments", "students"
+  add_foreign_key "eastposts", "students"
+  add_foreign_key "othercomments", "otherposts"
+  add_foreign_key "othercomments", "students"
+  add_foreign_key "otherposts", "students"
+  add_foreign_key "southcomments", "southposts"
+  add_foreign_key "southcomments", "students"
+  add_foreign_key "southposts", "students"
 end

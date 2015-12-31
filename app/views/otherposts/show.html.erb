@@ -1,0 +1,43 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @otherpost.title %>
+    </h1>
+    <%= image_tag @otherpost.photo.url(:medium) %>
+
+    <p>
+      <%= markdownify @otherpost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @otherpost.othercomments.count %>
+      Comments
+    </h2>
+        <%= render @otherpost.othercomments %>
+        <h3>Reply to thread</h3>
+        <%= render "othercomments/form" %>
+    </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Back", otherposts_path, class: "button" %>
+    <%= link_to "Delete Post", otherpost_path(@otherpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+    <%= link_to "Edit Post", edit_otherpost_path(@otherpost), class: "button" %>
+  </div>
+
+
+</div>

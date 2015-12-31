@@ -11,19 +11,19 @@ class Student < ActiveRecord::Base
 
   #  acts_as_taggable
 
-
-    # has_many :eastposts
-    # has_many :eastcomments
-    #
     has_many :beppuposts
     has_many :beppucomments
-    #
-    #
-    # has_many :southposts
-    # has_many :southcomments
-    #
-    # has_many :otherposts
-    # has_many :othercomments
+
+    has_many :eastposts
+    has_many :eastcomments
+
+
+
+    has_many :southposts
+    has_many :southcomments
+
+    has_many :otherposts
+    has_many :othercomments
    def self.search(query)
        if query.present?
          # where("name like :q", q: "%#{query}%")
@@ -58,18 +58,18 @@ class Student < ActiveRecord::Base
 
 
    def birdtype
-    # if self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count  <= 2
-    #   return :egg
-    # elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=4
-    #   return :pigeon
-    # elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=20
-    #   return :eagle
-    # elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=50
-    #   return :condor
-    # elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=100
-    #   return :albatross
+    if self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count  <= 2
+      return :egg
+    elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=4
+      return :pigeon
+    elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=20
+      return :eagle
+    elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=50
+      return :condor
+    elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=100
+      return :albatross
 
-    # end
+    end
   end
 
 
