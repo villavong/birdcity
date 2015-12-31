@@ -34,9 +34,15 @@
     <hr/>
     <br/>
     <%= link_to "Back", otherposts_path, class: "button" %>
-    <%= link_to "Delete Post", otherpost_path(@otherpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+    <%= link_to "New Post", new_otherpost_path, class: "button button_highlight" %>
+    <% if current_student && @otherpost.student == current_student %>
+        <%= link_to "Delete Post", otherpost_path(@otherpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
 
-    <%= link_to "Edit Post", edit_otherpost_path(@otherpost), class: "button" %>
+        <%= link_to "Edit Post", edit_otherpost_path(@otherpost), class: "button" %>
+
+    <% end %>
+
+
   </div>
 
 

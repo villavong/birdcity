@@ -31,7 +31,7 @@
 							<h2><%= link_to otherpost.title, otherpost %></h2>
 							<p class="description"><%= truncate(otherpost.content, length: 300) %></p>
 							<p class="description">Written By <%= otherpost.student.email %></p>
-							<p class="description"><%= local_time_ago otherpost.created_at %></p>
+							<p class="description"><%= time_ago_in_words(otherpost.created_at)  %></p>
 
 
 

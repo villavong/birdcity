@@ -8,7 +8,12 @@
     </p>
   </div>
   <div id="edit_button">
-    <%= link_to "Edit", edit_otherpost_othercomment_path(othercomment.otherpost, othercomment) %>
-    <%= link_to "Delete", [othercomment.otherpost, othercomment], method: :delete, data: { confirm: "Are you sure?" } %>
+
+    <% if current_student && @otherpost.student == current_student %>
+      <%= link_to "Edit", edit_otherpost_othercomment_path(othercomment.otherpost, othercomment) %>
+      <%= link_to "Delete", [othercomment.otherpost, othercomment], method: :delete, data: { confirm: "Are you sure?" } %>
+
+    <% end %>
+
   </div>
 </div>

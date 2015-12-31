@@ -5,7 +5,7 @@
 		<div class="wrapper_wide">
 			<br>
 								<h1>
-                In this Jap/Kor/Chinaforum, you can <br>
+                In Jap/Kor/China forum, you can <br>
                 1. Share what’s happening in your city and school! <br>
                 2. or Just meet up with other students by sharing your schedule!
 							</h1>
@@ -31,7 +31,7 @@
 							<h2><%= link_to eastpost.title, eastpost %></h2>
 							<p class="description"><%= truncate(eastpost.content, length: 300) %></p>
 							<p class="description">Written By <%= eastpost.student.email %></p>
-							<p class="description"><%= local_time_ago eastpost.created_at %></p>
+							<p class="description"><%= time_ago_in_words(eastpost.created_at)  %></p>
 
 
 

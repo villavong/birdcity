@@ -8,7 +8,13 @@
     </p>
   </div>
   <div id="edit_button">
-    <%= link_to "Edit", edit_eastpost_eastcomment_path(eastcomment.eastpost, eastcomment) %>
-    <%= link_to "Delete", [eastcomment.eastpost, eastcomment], method: :delete, data: { confirm: "Are you sure?" } %>
+    <% if current_student && @eastpost.student == current_student %>
+      <%= link_to "Edit", edit_eastpost_eastcomment_path(eastcomment.eastpost, eastcomment) %>
+      <%= link_to "Delete", [eastcomment.eastpost, eastcomment], method: :delete, data: { confirm: "Are you sure?" } %>
+
+    <% end %>
+
+
+
   </div>
 </div>

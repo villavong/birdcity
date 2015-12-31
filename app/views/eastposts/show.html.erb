@@ -34,10 +34,17 @@
     <hr/>
     <br/>
     <%= link_to "Back", eastposts_path, class: "button" %>
-    <%= link_to "Delete Post", eastpost_path(@eastpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+    <%= link_to "New Post", new_eastpost_path, class: "button button_highlight" %>
 
-    <%= link_to "Edit Post", edit_eastpost_path(@eastpost), class: "button" %>
-  </div>
+    <% if current_student && @eastpost.student == current_student %>
+      <%= link_to "Delete Post", eastpost_path(@eastpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+      <%= link_to "Edit Post", edit_eastpost_path(@eastpost), class: "button" %>
+
+    <% end %>
+
+
+    </div>
 
 
 </div>

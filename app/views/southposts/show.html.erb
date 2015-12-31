@@ -34,9 +34,16 @@
     <hr/>
     <br/>
     <%= link_to "Back", southposts_path, class: "button" %>
-    <%= link_to "Delete Post", southpost_path(@southpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+    <%= link_to "New Post", new_southpost_path, class: "button button_highlight" %>
 
-    <%= link_to "Edit Post", edit_southpost_path(@southpost), class: "button" %>
+    <% if current_student && @southpost.student == current_student %>
+      <%= link_to "Delete Post", southpost_path(@southpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+      <%= link_to "Edit Post", edit_southpost_path(@southpost), class: "button" %>
+
+    <% end %>
+
+
   </div>
 
 

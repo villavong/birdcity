@@ -10,12 +10,7 @@ class StudentsController < ApplicationController
         @students = Student.all.paginate(:page => params[:page], :per_page => 25)
       end
     end
-    def autocomplete
-        render json: Student.search(params[:term], fields: [{school: :text_start}], limit: 10).map(&:school)
-        # render json: Student.search(params[:term], fields: [{name: :text_start}], limit: 10).map(&:name)
-        # render json: Student.search(params[:term], fields: [{city: :text_start}], limit: 10).map(&:city)
-    end
-
+    
     def show
 
     end

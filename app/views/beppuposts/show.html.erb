@@ -34,10 +34,16 @@
     <hr/>
     <br/>
     <%= link_to "Back", beppuposts_path, class: "button" %>
-    <%= link_to "Delete Post", beppupost_path(@beppupost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
 
-    <%= link_to "Edit Post", edit_beppupost_path(@beppupost), class: "button" %>
     <%= link_to "New Post", new_beppupost_path, class: "button button_highlight" %>
+    <% if current_student && @beppupost.student == current_student %>
+        <%= link_to "Delete Post", beppupost_path(@beppupost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+        <%= link_to "Edit Post", edit_beppupost_path(@beppupost), class: "button" %>
+    <% end %>
+
+
+
 
     <div class="wrapper_skinny">
   	</div>

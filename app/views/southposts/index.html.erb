@@ -31,7 +31,7 @@
 							<h2><%= link_to southpost.title, southpost %></h2>
 							<p class="description"><%= truncate(southpost.content, length: 300) %></p>
 							<p class="description">Written By <%= southpost.student.email %></p>
-							<p class="description"><%= local_time_ago southpost.created_at %></p>
+							<p class="description"><%= time_ago_in_words(southpost.created_at)  %></p>
 
 
 
