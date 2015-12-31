@@ -184,7 +184,7 @@ body {
     font-style: normal;
     color: $dark;
     &:hover {
-      background: $highlight;
+      background: $buttonblue;
       color: $white;
     }
   }
@@ -195,7 +195,7 @@ body {
     }
   }
   .current {
-    background: $highlight;
+    background: $buttonblue;
     color: $white;
   }
 }

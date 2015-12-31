@@ -1,10 +1,11 @@
 class SouthpostsController < ApplicationController
+  before_filter :require_permission, only: [:edit, :update, :destroy]
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_student!, except: [:index, :show]
 
   def index
-    @southposts = Southpost.all.order("created_at DESC")
+    @southposts = Southpost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
   end
 
   def show
@@ -50,4 +51,12 @@ class SouthpostsController < ApplicationController
   def post_params
     params.require(:southpost).permit(:title, :content, :photo)
   end
+  def require_permission
+    @southpost = Southpost.find(params[:id])
+    if current_student.id != @southpost.student_id
+      redirect_to root_path, notice: "Sorry, you're not allowed"
+    end
+
+  end
+
 end

@@ -1,5 +1,6 @@
 class BeppucommentsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :destroy]
+  before_filter :require_permission, only: [:edit, :update, :destroy]
 
 
 	def create
@@ -38,6 +39,13 @@ class BeppucommentsController < ApplicationController
   private
   def find_post
     @beppupost = Beppupost.find(params[:beppupost_id])
+  end
+  def require_permission
+    @beppucomment = Beppucomment.find(params[:id])
+    if current_student.id != @beppucomment.student_id
+      redirect_to root_path, notice: "Sorry, you're not allowed"
+    end
+
   end
 
 end

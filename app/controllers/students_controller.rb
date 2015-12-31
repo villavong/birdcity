@@ -5,9 +5,9 @@ class StudentsController < ApplicationController
 
     def index
       if params[:search]
-        @students = Student.search(params[:search])
+        @students = Student.search(params[:search]).paginate(:page => params[:page], :per_page => 25)
       else
-        @students = Student.all
+        @students = Student.all.paginate(:page => params[:page], :per_page => 25)
       end
     end
     def autocomplete

@@ -1,5 +1,6 @@
 class OthercommentsController < ApplicationController
   before_action :find_post, only: [:create, :edit, :update, :destroy]
+  before_filter :require_permission, only: [:edit, :update, :destroy]
 
 
   def create
@@ -39,4 +40,12 @@ class OthercommentsController < ApplicationController
   def find_post
     @otherpost = Otherpost.find(params[:otherpost_id])
   end
+  def require_permission
+    @othercomment = Othercomment.find(params[:id])
+    if current_student.id != @othercomment.student_id
+      redirect_to root_path, notice: "Sorry, you're not allowed"
+    end
+
+  end
+
 end

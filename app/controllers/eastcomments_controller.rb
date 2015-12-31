@@ -1,5 +1,6 @@
 class EastcommentsController < ApplicationController
   before_action :find_post, only: [:create, :edit, :update, :destroy]
+  before_filter :require_permission, only: [:edit, :update, :destroy]
 
 
   def create
@@ -39,4 +40,12 @@ class EastcommentsController < ApplicationController
   def find_post
     @eastpost = Eastpost.find(params[:eastpost_id])
   end
+  def require_permission
+    @eastcomment = Eastcomment.find(params[:id])
+    if current_student.id != @eastcomment.student_id
+      redirect_to root_path, notice: "Sorry, you're not allowed"
+    end
+
+  end
+
 end
