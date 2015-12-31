@@ -28,7 +28,12 @@
 						</div>
 						<div class="episode_overview">
 							<h2><%= link_to beppupost.title, beppupost %></h2>
-							<p class="description"><%= truncate(beppupost.content, length: 50) %></p>
+							<p class="description"><%= truncate(beppupost.content, length: 300) %></p>
+							<p class="description">Written By <%= beppupost.student.email %></p>
+							<p class="description"><%= local_time_ago beppupost.created_at %></p>
+
+
+
 						</div>
 					</li>
 				<% end %>

@@ -37,7 +37,7 @@ class BeppupostsController < ApplicationController
 
     def destroy
       @beppupost.destroy
-      redirect_to root_path
+      redirect_to beppuposts_path
     end
 
     private
