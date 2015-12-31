@@ -15,7 +15,7 @@
   	    <p class = "date"><%= @student.school %></p>
   			<p class = "date"><%= @student.major %></p>
   			<p class = "date"><%= @student.city %></p>
-    		<p><%= @student.introduction %></p>
+    		<p><%= markdownify @student.introduction %></p>
 
   	</div>
   	<div id="student_photo">

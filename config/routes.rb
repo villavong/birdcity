@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :students
-  get 'beppupost/index'
-
-  get 'students/index'
-
-
-
-  root 'welcome#index'
+    root 'welcome#index'
 
   resources :students
 
@@ -29,4 +23,12 @@ Rails.application.routes.draw do
   resources :otherposts do
     resources :othercomments
   end
+
+  get 'beppupost/index'
+
+  get 'students/index'
+
+
+
+
 end
