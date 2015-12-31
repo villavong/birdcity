@@ -60,7 +60,7 @@ class Student < ActiveRecord::Base
    def birdtype
     if self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count  <= 2
       return :egg
-    elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=4
+    elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=10
       return :pigeon
     elsif self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count <=20
       return :eagle

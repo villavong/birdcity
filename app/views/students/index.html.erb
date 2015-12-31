@@ -19,6 +19,7 @@
 <div class="wrapper_skinny">
 
 
+
 <h1> Search </h1><h4>Type School or City </h4>
 
 <%= form_tag('/students', method: :get) do %>
@@ -33,7 +34,7 @@
 </br>
 </br>
 <div id="podcasts" class="cf">
-  <div class="wrapper">
+  <div class="wrapper_wide">
     <ul class="cf">
       <% @students.each do |student| %>
         <%= link_to student do %>
@@ -65,5 +66,21 @@
       <% end %>
     </ul>
   </div>
+	<div class="wrapper_skinny">
+		<h4>
+			Egg : Posts > 2 	<br><br>
+		 Pigeon : Posts > 10, 	<br><br>
+		 Eagle : Posts > 20,<br>
+
+			<br>	Condor : Post > 50, 	<br><br>
+			Alabatross : Post > 100<br>
+
+		</h4>
+
+	</div>
+
+
+
 </div>
+
 <%= will_paginate @students, previous_label: "Previous", next_label: "Next" %>
