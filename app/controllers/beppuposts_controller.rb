@@ -43,6 +43,7 @@ class BeppupostsController < ApplicationController
     private
 
     def find_post
+
       @beppupost = Beppupost.find(params[:id])
     end
 

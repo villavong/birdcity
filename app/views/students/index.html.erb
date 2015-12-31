@@ -50,8 +50,7 @@
 
 
             <div class="podcast_overview">
-							<h2>            <%= birdtype_display(student.birdtype) %></h2>
-
+							<h2><%= birdtype_display(student.birdtype) %></h2>
               <h2><%= student.name %></h2>
               <h2><%= truncate(student.school, length: 20) %></h2>
               <h2>Now in : <%= student.city %></h2>
