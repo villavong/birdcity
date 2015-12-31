@@ -22,7 +22,6 @@ gem 'gemoji', '~> 2.1.0'
 gem 'sanitize', '~> 3.0.3'
 gem 'simple_form', '~> 3.2'
 gem 'local_time', '~> 1.0.0'
-
 group :development, :test do
   gem 'byebug'
 end

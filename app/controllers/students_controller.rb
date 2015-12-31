@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
         @students = Student.all.paginate(:page => params[:page], :per_page => 25)
       end
     end
-    
+
     def show
 
     end
