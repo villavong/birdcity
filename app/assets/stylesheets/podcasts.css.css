@@ -83,18 +83,19 @@
     list-style: none;
     padding-left: 0; }
     #podcast_show #episodes ul li {
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid #d2d7da;
-      margin-bottom: 2rem; }
+      margin-bottom: 1rem; }
       #podcast_show #episodes ul li:last-child {
         border-bottom: none; }
       #podcast_show #episodes ul li .episode_thumbnail {
         width: 22%;
         float: left; }
         #podcast_show #episodes ul li .episode_thumbnail img {
-          width: 8rem;
-          height: 8rem;
+          width: 10rem;
+          height: 10rem;
           max-width: 100%;
+          margin-top: 1rem;
           border-radius: .3rem; }
       #podcast_show #episodes ul li .episode_overview {
         width: 76.5%;
