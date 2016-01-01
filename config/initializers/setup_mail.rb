@@ -11,6 +11,6 @@ if Rails.env.development? || Rails.env.production?
     :enable_starttls_auto => true
 
   }
-  config.action_mailer.default_url_options = { :host => "quiet-badlands-3939.herokuapp.com"}
+  Rails.application.routes.default_url_options[:host] = 'quiet-badlands-3939.herokuapp.com'
 
 end
