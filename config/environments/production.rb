@@ -92,9 +92,13 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'quiet-badlands-3939.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
+
+  Rails.application.routes.default_url_options[:host] = 'heroku.com'
+
+
   config.action_mailer.smtp_settings = {
     :address            => 'smtp.sendgrid.net',
-    :port               => '587',
+    :port               => '2525',
     :authentication     => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
