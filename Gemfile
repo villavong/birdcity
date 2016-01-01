@@ -28,6 +28,8 @@ gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem 'byebug'
+  gem 'foreman'
+
 end
 
 group :development do
