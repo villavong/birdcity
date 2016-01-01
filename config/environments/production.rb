@@ -1,3 +1,6 @@
+Rails.application.routes.default_url_options[:host] = 'quiet-badlands-3939.herokuapp.com'
+
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -107,4 +110,3 @@ Rails.application.configure do
     :openssl_verify_mode => 'none'
   }
 end
-Rails.application.routes.default_url_options[:host] = 'quiet-badlands-3939.herokuapp.com'
