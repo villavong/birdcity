@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :students, controllers: { registrations: "registrations" }
-  
+  devise_for :students
+
     root 'welcome#index'
 
   resources :students
