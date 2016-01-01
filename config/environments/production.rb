@@ -88,6 +88,9 @@ Rails.application.configure do
     :path => ":class/:id/:basename_:style.:extension",
     :url => ":s3_sg_url"
   }
+
+
+  
   config.action_mailer.perform_deliveries = true
 
 
@@ -95,12 +98,12 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     :address            => 'smtp.sendgrid.net',
-    :port               => '2525',
+    :port               => '587',
     :authentication     => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
     :domain             => 'heroku.com',
     :enable_starttls_auto => true,
-    :openssl_verify_mode => 'none' 
+    :openssl_verify_mode => 'none'
   }
 end

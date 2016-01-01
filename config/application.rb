@@ -24,12 +24,13 @@ module Birdcity
     config.active_record.raise_in_transactional_callbacks = true
     ActionMailer::Base.smtp_settings = {
       :address            => 'smtp.sendgrid.net',
-      :port               => '2525',
+      :port               => '587',
       :authentication     => :plain,
       :user_name      => ENV['SENDGRID_USERNAME'],
       :password       => ENV['SENDGRID_PASSWORD'],
       :domain             => 'heroku.com',
-      :enable_starttls_auto => true
+      :enable_starttls_auto => true,
+      :openssl_verify_mode => 'none'
     }
 
   end
