@@ -35,6 +35,8 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+  config.action_mailer.perform_deliveries = true
+
   config.action_mailer.default_url_options = { :host => 'quiet-badlands-3939.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.delivery_method = :smtp
@@ -44,7 +46,7 @@ Rails.application.configure do
     :authentication     => :plain,
     :user_name          => 'app45626912@heroku.com',
     :passwords          => '9a4luqmz5298',
-    :domain             => 'heroku.com',
+    :domain             => 'quiet-badlands-3939.heroku.com',
     :enable_starttls_auto => true
   }
   # Raises error for missing translations
