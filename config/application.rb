@@ -24,16 +24,18 @@ module Birdcity
     config.active_record.raise_in_transactional_callbacks = true
     config.action_mailer.default_url_options = { :host => "quiet-badlands-3939.herokuapp.com"}
 
-    ActionMailer::Base.smtp_settings = {
-      :address            => 'smtp.gmail.com',
-      :port               => '587',
-      :authentication     => :plain,
-      :user_name      => ENV['GMAIL_USERNAME'],
-      :password       => ENV['GMAIL_PASSWORD'],
-      :domain             => 'example.com',
-      :enable_starttls_auto => true
-      # :openssl_verify_mode => 'none'
+    config.action_mailer.smtp_settings = {
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => 'heroku.com',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true,
+      :openssl_verify_mode => 'none'
+
     }
+
 
   end
 end
