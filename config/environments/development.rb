@@ -51,6 +51,17 @@ Rails.application.configure do
     :openssl_verify_mode => 'none'
 
   }
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+      :use_timestamp => false
+    },
+    :path => ":class/:id/:basename_:style.:extension",
+    :url => ":s3_sg_url"
+  }
 
 
   # Raises error for missing translations
