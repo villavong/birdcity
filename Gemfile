@@ -14,7 +14,6 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'aws-sdk', '< 2.0'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
-gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 gem 'jquery-ui-rails'
 gem 'html-pipeline', '~> 1.11.0'
 gem 'github-markdown', '~> 0.6.7'
@@ -22,6 +21,9 @@ gem 'gemoji', '~> 2.1.0'
 gem 'sanitize', '~> 3.0.3'
 gem 'simple_form', '~> 3.2'
 gem 'local_time', '~> 1.0.0'
+
+gem 'activeadmin', github: 'activeadmin'
+
 group :development, :test do
   gem 'byebug'
 end
