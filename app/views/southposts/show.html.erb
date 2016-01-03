@@ -15,7 +15,9 @@
       Title: <%= @southpost.title %>
     </h1>
     <%= image_tag @southpost.photo.url(:medium) %>
-
+    <h5>
+      Author: <%= link_to @southpost.student.email, @southpost.student %>
+    </h5>
     <p>
       <%= markdownify @southpost.content %>
     </p>

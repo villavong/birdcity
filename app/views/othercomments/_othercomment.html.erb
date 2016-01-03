@@ -4,7 +4,7 @@
       <%= markdownify othercomment.comment %>
     </p>
     <p class="comment_author">
-      <%= othercomment.student.email %>
+      <%= link_to othercomment.student.email, othercomment.student  %>
     </p>
   </div>
   <div id="edit_button">

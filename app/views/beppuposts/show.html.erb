@@ -15,7 +15,9 @@
       Title: <%= @beppupost.title %>
     </h1>
     <%= image_tag @beppupost.photo.url(:medium) %>
-
+    <h5>
+      Author: <%= link_to @beppupost.student.email, @beppupost.student %>
+    </h5>
     <p>
       <%= markdownify @beppupost.content %>
     </p>
