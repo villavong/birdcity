@@ -26,6 +26,8 @@ class StudentsController < ApplicationController
         @student = current_student
       else
         @student = Student.find(params[:id])
+        @nowstudent = current_student
+
       end
 
     end
