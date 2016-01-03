@@ -1,6 +1,6 @@
 class Southpost < ActiveRecord::Base
   belongs_to :student
-  has_many :southcomments
+  has_many :southcomments, :dependent => :delete_all
 
 
   has_attached_file :photo, styles: { :large => "1000x1000#", :medium => "550x550#" }

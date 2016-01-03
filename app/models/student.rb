@@ -9,17 +9,17 @@ class Student < ActiveRecord::Base
 
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
-  has_many :eastposts
+  has_many :eastposts, :dependent => :delete_all
   has_many :eastcomments
 
-  has_many :beppuposts
+  has_many :beppuposts, :dependent => :delete_all
   has_many :beppucomments
 
 
-  has_many :southposts
+  has_many :southposts, :dependent => :delete_all
   has_many :southcomments
 
-  has_many :otherposts
+  has_many :otherposts, :dependent => :delete_all
   has_many :othercomments
   def self.search(query)
       if query.present?
