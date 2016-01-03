@@ -5,12 +5,12 @@
     </p>
     <p class="comment_author">
 
-      <% if studentcomment.author_id != studentcomment.student_id %>
+      <% if studentcomment.author_id == studentcomment.student_id %>
+          <%= studentcomment.author_email  %>
 
-            <%= link_to studentcomment.author_email, studentcomment.student  %>
       <% elsif  %>
+          <%= link_to studentcomment.author_email, studentcomment.student  %>
 
-            <%= studentcomment.author_email  %>
       <% end %>
 
     </p>
