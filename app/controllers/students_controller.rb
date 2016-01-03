@@ -12,7 +12,8 @@ class StudentsController < ApplicationController
     end
 
     def show
-      @authorstudent = Student.find(params[:author_id])
+
+  
 
     end
 
