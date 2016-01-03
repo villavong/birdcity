@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
     end
 
     def show
-
+      @studentcomment = @student.studentcomments.find(params[:student_id])
     end
 
 
