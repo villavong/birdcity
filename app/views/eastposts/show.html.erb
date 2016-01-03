@@ -15,8 +15,11 @@
       Title: <%= @eastpost.title %>
     </h1>
     <%= image_tag @eastpost.photo.url(:medium) %>
+<h5>
+  Author: <%= link_to @eastpost.student.email, @eastpost.student %>
+</h5>
 
-    <p>
+ <p>
       <%= markdownify @eastpost.content %>
     </p>
     <div id="comments">
