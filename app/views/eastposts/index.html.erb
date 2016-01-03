@@ -30,7 +30,7 @@
 						<div class="episode_overview">
 							<h2><%= link_to eastpost.title, eastpost %></h2>
 							<p class="description"><%= truncate(eastpost.content, length: 300) %></p>
-							<p class="description">Written By <%= eastpost.student.email %></p>
+							<p class="description">Written By <%= link_to eastpost.student.email, eastpost.student %></p>
 							<p class="description"><%= time_ago_in_words(eastpost.created_at)  %></p>
 
 

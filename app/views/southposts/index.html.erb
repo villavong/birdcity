@@ -30,7 +30,7 @@
 						<div class="episode_overview">
 							<h2><%= link_to southpost.title, southpost %></h2>
 							<p class="description"><%= truncate(southpost.content, length: 300) %></p>
-							<p class="description">Written By <%= southpost.student.email %></p>
+							<p class="description">Written By <%= link_to southpost.student.email, southpost.student %></p>
 							<p class="description"><%= time_ago_in_words(southpost.created_at)  %></p>
 
 

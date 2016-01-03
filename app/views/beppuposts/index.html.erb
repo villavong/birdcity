@@ -30,7 +30,7 @@
 						<div class="episode_overview">
 							<h2><%= link_to beppupost.title, beppupost %></h2>
 							<p class="description"><%= truncate(beppupost.content, length: 300) %></p>
-							<p class="description">Written By <%= beppupost.student.email %></p>
+							<p class="description">Written By <%= link_to beppupost.student.email, beppupost.student %></p>
 							<p class="description"><%= time_ago_in_words(beppupost.created_at)  %></p>
 
 
