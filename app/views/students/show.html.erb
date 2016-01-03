@@ -21,26 +21,20 @@
   	<div id="student_photo">
       <div><%= image_tag @student.photo.url(:medium) %></div>
   	</div>
-    <div class="comment cf">
-      <div class="content">
-        <p class="comment_content">
-          <%= markdownify studentcomment.comment %>
-        </p>
-        <p class="comment_author">
-          <%= link_to studentcomment.student.email, studentcomment.student %>
-        </p>
-      </div>
-      <div id="edit_button">
-        <% if current_student && studentcomment.student == current_student %>
-
-          <%= link_to "Edit", edit_student_studentcomment_path(studentcomment.student, studentcomment) %>
-          <%= link_to "Delete", [studentcomment.student, studentcomment], method: :delete, data: { confirm: "Are you sure?" } %>
 
 
-        <% end %>
 
-      </div>
-    </div>
+    <div id="comments">
+    <h2>
+      <%= @student.studentcomments.count %>
+      Comments
+    </h2>
+        <%= render @student.studentcomments %>
+        <h3>Reply to thread</h3>
+        <%= render "studentcomments/form" %>
+
+
+
 
 
 
