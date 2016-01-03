@@ -1,5 +1,7 @@
 class StudentcommentsController < ApplicationController
     before_action :find_student, only: [:edit, :update, :destroy]
+    before_action :authenticate_student!, except: [:index, :show]
+
     # before_filter :require_permission, only: [:edit, :update, :destroy]
 
 
