@@ -4,11 +4,15 @@
       <%= markdownify studentcomment.comment %>
     </p>
     <p class="comment_author">
-      <%= link_to studentcomment.student.email, studentcomment.student %>
+      <%= studentcomment.author_email  %>
     </p>
+
+
+
+
   </div>
   <div id="edit_button">
-    <% if current_student && studentcomment.student == current_student %>
+    <% if current_student.id && studentcomment.author_id == current_student.id %>
 
       <%= link_to "Edit", edit_student_studentcomment_path(studentcomment.student, studentcomment) %>
       <%= link_to "Delete", [studentcomment.student, studentcomment], method: :delete, data: { confirm: "Are you sure?" } %>

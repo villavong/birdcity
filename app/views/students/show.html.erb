@@ -25,10 +25,10 @@
     <div id="post_content">
       <div id="comments" class = "cf">
       <h2>
-        <%= @nowstudent.studentcomments.count %>
+        <%= @student.studentcomments.count %>
         Comments
       </h2>
-          <%= render @nowstudent.studentcomments %>
+          <%= render @student.studentcomments %>
           <h3>Reply to thread</h3>
           <%= render "studentcomments/form" %>
     </div>

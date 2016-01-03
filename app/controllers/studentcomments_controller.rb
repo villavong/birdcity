@@ -6,9 +6,10 @@ class StudentcommentsController < ApplicationController
   	def create
       @student = Student.find(params[:student_id])
 
-      @nowstudent = current_student
 
-  		@studentcomment = @nowstudent.studentcomments.create(params[:studentcomment].permit(:comment))
+  		@studentcomment = @student.studentcomments.create(params[:studentcomment].permit(:comment))
+      @studentcomment.author_email = current_student.email
+      @studentcomment.author_id = current_student.id
   		@studentcomment.save
 
   		if @studentcomment.save
