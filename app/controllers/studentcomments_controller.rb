@@ -7,7 +7,6 @@ class StudentcommentsController < ApplicationController
       @student = Student.find(params[:student_id])
 
   		@studentcomment = @student.studentcomments.create(params[:studentcomment].permit(:comment))
-  		@studentcomment.student = current_student if current_student
   		@studentcomment.save
 
   		if @studentcomment.save
