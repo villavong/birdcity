@@ -21,6 +21,9 @@ class Student < ActiveRecord::Base
 
   has_many :otherposts, :dependent => :delete_all
   has_many :othercomments
+
+
+  has_many :studentcomments, :dependent => :delete_all
   def self.search(query)
       if query.present?
         # where("name like :q", q: "%#{query}%")

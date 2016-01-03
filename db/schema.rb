@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160101022928) do
+ActiveRecord::Schema.define(version: 20160103164232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,6 +149,15 @@ ActiveRecord::Schema.define(version: 20160101022928) do
 
   add_index "southposts", ["student_id"], name: "index_southposts_on_student_id", using: :btree
 
+  create_table "studentcomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "studentcomments", ["student_id"], name: "index_studentcomments_on_student_id", using: :btree
+
   create_table "students", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -221,4 +230,5 @@ ActiveRecord::Schema.define(version: 20160101022928) do
   add_foreign_key "southcomments", "southposts"
   add_foreign_key "southcomments", "students"
   add_foreign_key "southposts", "students"
+  add_foreign_key "studentcomments", "students"
 end
