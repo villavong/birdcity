@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  # before_action :find_student, only: [:show]
+  before_action :find_student, only: [:show]
 
 
 
