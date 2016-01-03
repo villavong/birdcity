@@ -12,6 +12,7 @@ class StudentsController < ApplicationController
     end
 
     def show
+      @authorstudent = Student.find(params[:author_id])
 
     end
 
@@ -26,7 +27,6 @@ class StudentsController < ApplicationController
         @student = current_student
       else
         @student = Student.find(params[:id])
-        @nowstudent = current_student
 
       end
 
