@@ -4,7 +4,12 @@
       <%= markdownify studentcomment.comment %>
     </p>
     <p class="comment_author">
-      <%= studentcomment.author_email  %>
+      <% if studentcomment.author_email != current_student.email %>
+        <%= link_to studentcomment.author_email, author_email.student  %>
+      <% elsif %>
+        <%= studentcomment.author_email  %>
+      <% end  %>
+
     </p>
 
 

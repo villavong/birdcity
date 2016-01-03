@@ -1,6 +1,6 @@
 class StudentcommentsController < ApplicationController
     before_action :find_student, only: [:edit, :update, :destroy]
-    before_filter :require_permission, only: [:edit, :update, :destroy]
+    # before_filter :require_permission, only: [:edit, :update, :destroy]
 
 
   	def create
