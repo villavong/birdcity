@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :find_student, only: [:show]
+  # before_action :find_student, only: [:show]
 
 
 
@@ -12,6 +12,8 @@ class StudentsController < ApplicationController
     end
 
     def show
+      @student = Student.find(params[:student_id])
+
       @studentcomment = @student.studentcomments.find(params[:id])
     end
 
