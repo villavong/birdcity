@@ -2,8 +2,7 @@ class SouthpostsController < ApplicationController
   before_filter :require_permission, only: [:edit, :update, :destroy]
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_student!, except: [:index, :show]
-
+  before_action :authenticate_student!
   def index
     @southposts = Southpost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
   end

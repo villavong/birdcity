@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_student!
+
   before_action :find_student, only: [:show]
 
 
@@ -13,7 +15,7 @@ class StudentsController < ApplicationController
 
     def show
 
-  
+
 
     end
 
