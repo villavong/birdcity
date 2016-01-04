@@ -1,7 +1,7 @@
 class OtherpostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_student!
   before_filter :require_permission, only: [:edit, :update, :destroy]
+  before_action :authenticate_student!, only: [:new, :create]
 
 
   def index

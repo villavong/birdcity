@@ -2,7 +2,7 @@ class BeppupostsController < ApplicationController
   before_action :require_permission, only: [:edit, :update, :destroy]
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_student!
+	before_action :authenticate_student!, only: [:new, :create]
 
   def index
     @beppuposts = Beppupost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
