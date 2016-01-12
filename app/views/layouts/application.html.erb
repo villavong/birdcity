@@ -21,7 +21,6 @@
     <% end %>
     <% unless current_page?(root_path) %>
       <%= render 'layouts/header'; %>
-      <%= render 'layouts/sidebar'; %>
 
     <% end %>
 
@@ -38,11 +37,15 @@
   });
 
 </script>
+<% unless current_page?(root_path) %>
+  <%= render 'layouts/footer'; %>
 
+<% end %>
 <br>
-<div class="wrapper_skinny">
-  Birdsinthatcity works best on Chrome. <br><br>
-  Byungwook SO Production. Contact : byunso09@apu.ac.jp
+<div class="wrapper_wide">
+
+  <!-- Birdsinthatcity works best on Chrome. <br><br>
+  Byungwook SO Production. Contact : byunso09@apu.ac.jp -->
 </div>
 <br><br><br>
 </body>

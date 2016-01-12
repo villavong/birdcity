@@ -89,7 +89,44 @@ body {
    background: darken($white, 7.5%);
   }
 }
+#main_footer {
+  color: $dark;
+  background: #819FC3;
+  padding: 1.5rem 0;
+  #logo {
+    float: left;
+    text-transform: none;
+    font-weight: 700;
+    color: $dark;
+    text-decoration: none;
+    &:hover {
+      color: $highlight;
+    }
+  }
+  nav {
+    float: left;
+    ul {
+      list-style: none;
+      margin: 0;
+      li {
+        display: inline;
+        margin-left: 2.5rem;
+        position: relative;
 
+        a {
+          color: $dark;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 0.9rem;
+          &:hover {
+            color: $highlight;
+          }
+        }
+      }
+    }
+  }
+
+}
 #main_header {
   color: $dark;
   background: $white;

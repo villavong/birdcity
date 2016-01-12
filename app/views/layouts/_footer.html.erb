@@ -1,0 +1,42 @@
+<header id="main_footer" class="cf">
+	<div class="wrapper">
+
+		<nav>
+			<ul>
+				<% unless student_signed_in? %>
+				<% else %>
+          <li>Forums : </li>
+
+					<li><%= link_to "Beppu/Oita", "/beppuposts/" %></li>
+
+					<li><%= link_to "Fukuoka", "/fukuokaposts/" %></li>
+          
+          <li><%= link_to "Osaka", "/osakaposts/" %></li>
+
+
+					<li><%= link_to "Tokyo", "/tokyoposts/" %></li>
+
+
+
+					<li><%= link_to "Seoul", "/eastposts/" %></li>
+
+
+
+
+
+
+
+
+
+
+					<li><%= link_to "SouthEastAsia", "/southposts/" %></li>
+
+					<li><%= link_to "OtherCities", "/otherposts/" %></li>
+
+
+
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</header>
