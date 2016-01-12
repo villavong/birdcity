@@ -1,6 +1,8 @@
 class OsakacommentsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :destroy]
   before_filter :require_permission, only: [:edit, :update, :destroy]
+  before_action :authenticate_student!, only: [:create]
+
 
 
   def create
