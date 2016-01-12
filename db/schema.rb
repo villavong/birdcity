@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103192923) do
+ActiveRecord::Schema.define(version: 20160112144624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,56 @@ ActiveRecord::Schema.define(version: 20160103192923) do
   end
 
   add_index "eastposts", ["student_id"], name: "index_eastposts_on_student_id", using: :btree
+
+  create_table "fukuokacomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "fukuokapost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "fukuokacomments", ["fukuokapost_id"], name: "index_fukuokacomments_on_fukuokapost_id", using: :btree
+  add_index "fukuokacomments", ["student_id"], name: "index_fukuokacomments_on_student_id", using: :btree
+
+  create_table "fukuokaposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "fukuokaposts", ["student_id"], name: "index_fukuokaposts_on_student_id", using: :btree
+
+  create_table "osakacomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "osakapost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "osakacomments", ["osakapost_id"], name: "index_osakacomments_on_osakapost_id", using: :btree
+  add_index "osakacomments", ["student_id"], name: "index_osakacomments_on_student_id", using: :btree
+
+  create_table "osakaposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "osakaposts", ["student_id"], name: "index_osakaposts_on_student_id", using: :btree
 
   create_table "othercomments", force: :cascade do |t|
     t.text     "comment"
@@ -220,12 +270,43 @@ ActiveRecord::Schema.define(version: 20160103192923) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+  create_table "tokyocomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "tokyopost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "tokyocomments", ["student_id"], name: "index_tokyocomments_on_student_id", using: :btree
+  add_index "tokyocomments", ["tokyopost_id"], name: "index_tokyocomments_on_tokyopost_id", using: :btree
+
+  create_table "tokyoposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "tokyoposts", ["student_id"], name: "index_tokyoposts_on_student_id", using: :btree
+
   add_foreign_key "beppucomments", "beppuposts"
   add_foreign_key "beppucomments", "students"
   add_foreign_key "beppuposts", "students"
   add_foreign_key "eastcomments", "eastposts"
   add_foreign_key "eastcomments", "students"
   add_foreign_key "eastposts", "students"
+  add_foreign_key "fukuokacomments", "fukuokaposts"
+  add_foreign_key "fukuokacomments", "students"
+  add_foreign_key "fukuokaposts", "students"
+  add_foreign_key "osakacomments", "osakaposts"
+  add_foreign_key "osakacomments", "students"
+  add_foreign_key "osakaposts", "students"
   add_foreign_key "othercomments", "otherposts"
   add_foreign_key "othercomments", "students"
   add_foreign_key "otherposts", "students"
@@ -233,4 +314,7 @@ ActiveRecord::Schema.define(version: 20160103192923) do
   add_foreign_key "southcomments", "students"
   add_foreign_key "southposts", "students"
   add_foreign_key "studentcomments", "students"
+  add_foreign_key "tokyocomments", "students"
+  add_foreign_key "tokyocomments", "tokyoposts"
+  add_foreign_key "tokyoposts", "students"
 end

@@ -1,0 +1,55 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @tokyopost.title %>
+    </h1>
+    <%= image_tag @tokyopost.photo.url(:medium) %>
+    <h5>
+      Author: <%= link_to @tokyopost.student.email, @tokyopost.student %>
+    </h5>
+    <p>
+      <%= markdownify @tokyopost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @tokyopost.tokyocomments.count %>
+      Comments
+    </h2>
+        <%= render @tokyopost.tokyocomments %>
+        <h3>Reply to thread</h3>
+        <%= render "tokyocomments/form" %>
+    </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Back", tokyoposts_path, class: "button" %>
+
+    <%= link_to "New Post", new_tokyopost_path, class: "button button_highlight" %>
+    <% if current_student && @tokyopost.student == current_student %>
+        <%= link_to "Delete Post", tokyopost_path(@tokyopost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+        <%= link_to "Edit Post", edit_tokyopost_path(@tokyopost), class: "button" %>
+    <% end %>
+
+
+
+
+    <div class="wrapper_skinny">
+  	</div>
+  </div>
+
+
+</div>

@@ -1,0 +1,55 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @osakapost.title %>
+    </h1>
+    <%= image_tag @osakapost.photo.url(:medium) %>
+    <h5>
+      Author: <%= link_to @osakapost.student.email, @osakapost.student %>
+    </h5>
+    <p>
+      <%= markdownify @osakapost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @osakapost.osakacomments.count %>
+      Comments
+    </h2>
+        <%= render @osakapost.osakacomments %>
+        <h3>Reply to thread</h3>
+        <%= render "osakacomments/form" %>
+    </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Back", osakaposts_path, class: "button" %>
+
+    <%= link_to "New Post", new_osakapost_path, class: "button button_highlight" %>
+    <% if current_student && @osakapost.student == current_student %>
+        <%= link_to "Delete Post", osakapost_path(@osakapost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+        <%= link_to "Edit Post", edit_osakapost_path(@osakapost), class: "button" %>
+    <% end %>
+
+
+
+
+    <div class="wrapper_skinny">
+  	</div>
+  </div>
+
+
+</div>

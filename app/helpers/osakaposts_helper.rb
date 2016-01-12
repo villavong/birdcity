@@ -1,0 +1,2 @@
+module OsakapostsHelper
+end

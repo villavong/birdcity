@@ -1,0 +1,55 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @fukuokapost.title %>
+    </h1>
+    <%= image_tag @fukuokapost.photo.url(:medium) %>
+    <h5>
+      Author: <%= link_to @fukuokapost.student.email, @fukuokapost.student %>
+    </h5>
+    <p>
+      <%= markdownify @fukuokapost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @fukuokapost.fukuokacomments.count %>
+      Comments
+    </h2>
+        <%= render @fukuokapost.fukuokacomments %>
+        <h3>Reply to thread</h3>
+        <%= render "fukuokacomments/form" %>
+    </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Back", fukuokaposts_path, class: "button" %>
+
+    <%= link_to "New Post", new_fukuokapost_path, class: "button button_highlight" %>
+    <% if current_student && @fukuokapost.student == current_student %>
+        <%= link_to "Delete Post", fukuokapost_path(@fukuokapost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+        <%= link_to "Edit Post", edit_fukuokapost_path(@fukuokapost), class: "button" %>
+    <% end %>
+
+
+
+
+    <div class="wrapper_skinny">
+  	</div>
+  </div>
+
+
+</div>

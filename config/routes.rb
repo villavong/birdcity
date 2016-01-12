@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :students
 
-    root 'welcome#index'
+  root 'welcome#index'
+
+  authenticated :student do
+    root 'students#index', as:"authenticated_root"
+  end
 
   resources :students do
     resources :studentcomments
@@ -16,6 +20,22 @@ Rails.application.routes.draw do
   resources :beppuposts do
     resources :beppucomments
   end
+
+
+  resources :tokyoposts do
+    resources :tokyocomments
+  end
+
+
+  resources :fukuokaposts do
+    resources :fukuokacomments
+  end
+
+  resources :osakaposts do
+    resources :osakacomments
+  end
+
+
 
   resources :eastposts do
       resources :eastcomments

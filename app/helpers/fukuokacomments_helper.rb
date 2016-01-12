@@ -1,0 +1,2 @@
+module FukuokacommentsHelper
+end

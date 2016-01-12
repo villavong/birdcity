@@ -1,0 +1,18 @@
+<div class="comment cf">
+  <div class="content">
+    <p class="comment_content">
+      <%= markdownify osakacomment.comment %>
+    </p>
+    <p class="comment_author">
+      <%= link_to osakacomment.student.email, osakacomment.student %>
+    </p>
+  </div>
+  <div id="edit_button">
+    <% if current_student && osakacomment.student == current_student %>
+      <%= link_to "Edit", edit_osakapost_osakacomment_path(osakacomment.osakapost, osakacomment) %>
+      <%= link_to "Delete", [osakacomment.osakapost, osakacomment], method: :delete, data: { confirm: "Are you sure?" } %>
+
+    <% end %>
+
+  </div>
+</div>
