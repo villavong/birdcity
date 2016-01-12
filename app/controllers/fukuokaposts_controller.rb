@@ -2,7 +2,7 @@ class FukuokapostsController < ApplicationController
   before_action :require_permission, only: [:edit, :update, :destroy]
 
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_student!, only: [:new, :create]
+  before_action :authenticate_student!, only: [:new, :create, :show]
 
   def index
     @fukuokaposts = Fukuokapost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
