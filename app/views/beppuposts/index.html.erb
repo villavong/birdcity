@@ -15,7 +15,10 @@
 	</div>
 	<br><br>
 	<div class="wrapper_skinny">
-		<%= link_to "New Post", new_beppupost_path, class: "button button_highlight" %>
+	 <div class="cf">
+		 <%= link_to "New Post", new_beppupost_path, class: "button button_highlight" %>
+
+	 </div>
 	</div>
 
 	<div id="episodes">
@@ -30,8 +33,7 @@
 						<div class="episode_overview">
 							<h2><%= link_to beppupost.title, beppupost %></h2>
 							<p class="description"><%= truncate(beppupost.content, length: 300) %></p>
-							<p class="description">Written By <%= link_to beppupost.student.email, beppupost.student %></p>
-							<p class="description"><%= time_ago_in_words(beppupost.created_at)  %></p>
+							<p class="description">Written By <%= link_to beppupost.student.email, beppupost.student %>, <%= time_ago_in_words(beppupost.created_at)  %> ago, <%= beppupost.beppucomments.count %> comments </p>
 
 
 

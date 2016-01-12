@@ -15,7 +15,10 @@
 	</div>
 	<br><br>
 	<div class="wrapper_skinny">
-		<%= link_to "New Post", new_eastpost_path, class: "button button_highlight" %>
+		<div class="cf">
+			<%= link_to "New Post", new_eastpost_path, class: "button button_highlight" %>
+
+		</div>
 	</div>
 
 	<div id="episodes">
@@ -28,10 +31,10 @@
 
 						</div>
 						<div class="episode_overview">
-							<h2><%= link_to eastpost.title, eastpost %></h2>
+							<h2><%= link_to eastpost.title, eastpost %>
+</h2>
 							<p class="description"><%= truncate(eastpost.content, length: 300) %></p>
-							<p class="description">Written By <%= link_to eastpost.student.email, eastpost.student %></p>
-							<p class="description"><%= time_ago_in_words(eastpost.created_at)  %></p>
+							<p class="description">Written By <%= link_to eastpost.student.email, eastpost.student %>, <%= time_ago_in_words(eastpost.created_at)  %> ago, <%= eastpost.eastcomments.count %> comments </p>
 
 
 

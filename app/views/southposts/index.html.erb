@@ -15,7 +15,10 @@
 	</div>
 	<br><br>
 	<div class="wrapper_skinny">
-		<%= link_to "New Post", new_southpost_path, class: "button button_highlight" %>
+		<div class="cf">
+			<%= link_to "New Post", new_southpost_path, class: "button button_highlight" %>
+
+		</div>
 	</div>
 
 	<div id="episodes">
@@ -30,8 +33,7 @@
 						<div class="episode_overview">
 							<h2><%= link_to southpost.title, southpost %></h2>
 							<p class="description"><%= truncate(southpost.content, length: 300) %></p>
-							<p class="description">Written By <%= link_to southpost.student.email, southpost.student %></p>
-							<p class="description"><%= time_ago_in_words(southpost.created_at)  %></p>
+							<p class="description">Written By <%= link_to southpost.student.email, southpost.student %>, <%= time_ago_in_words(southpost.created_at)  %> ago, <%= southpost.southcomments.count %> comments </p>
 
 
 

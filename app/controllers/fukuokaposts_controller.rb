@@ -5,7 +5,7 @@ class FukuokapostsController < ApplicationController
   before_action :authenticate_student!, only: [:new, :create]
 
   def index
-    @fukuokaposts = Fukuokapost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
+    @fukuokaposts = Fukuokapost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
   end
 
   def show

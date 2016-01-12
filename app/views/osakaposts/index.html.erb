@@ -15,7 +15,10 @@
 	</div>
 	<br><br>
 	<div class="wrapper_skinny">
-		<%= link_to "New Post", new_osakapost_path, class: "button button_highlight" %>
+		<div class="cf">
+			<%= link_to "New Post", new_osakapost_path, class: "button button_highlight" %>
+
+		</div>
 	</div>
 
 	<div id="episodes">
@@ -30,8 +33,7 @@
 						<div class="episode_overview">
 							<h2><%= link_to osakapost.title, osakapost %></h2>
 							<p class="description"><%= truncate(osakapost.content, length: 300) %></p>
-							<p class="description">Written By <%= link_to osakapost.student.email, osakapost.student %></p>
-							<p class="description"><%= time_ago_in_words(osakapost.created_at)  %></p>
+							<p class="description">Written By <%= link_to osakapost.student.email, osakapost.student %>, <%= time_ago_in_words(osakapost.created_at)  %> ago, <%= osakapost.osakacomments.count %> comments </p>
 
 
 
