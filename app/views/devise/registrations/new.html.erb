@@ -14,12 +14,12 @@
           <%= devise_error_messages! %>
 
           <div class="field">
-          <%= f.label :email %> (.edu or .ac is preferred to proove your school)
+          <%= f.label :email %> (It can be anything, but I prefer .edu or .ac. It just looks cool, haha)
             <br />
             <%= f.email_field :email, autofocus: true %>
           </div>
           <div class="field">
-            <%= f.label :name %><br />
+            <%= f.label "Name. What your mom calls u :)" %><br />
             <%= f.text_field :name, autofocus: true %>
           </div>
           <div class="field">
@@ -31,16 +31,16 @@
           </div>
 
           <div class="field">
-            <%= f.label :password_confirmation %><br />
+            <%= f.label :password_confirmation %> - yah, it bothers me too. <br />
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
 
           <div class="field">
-            <%= f.label "City you are now staying(Change it when you travel around)" %><br />
+            <%= f.label "City you are now staying(I mean like where u hangout alot )" %><br />
             <%= f.text_field :city %>
           </div>
           <div class="field">
-            <%= f.label "Your Photo" %><br />
+            <%= f.label "Photo. No need to upload now, but I kinda want to see your face too. You can see mine." %><br />
             <%= f.file_field :photo  %>
           </div>
 <br>
