@@ -8,7 +8,7 @@
   <div class="wrapper_skinny">
 
 
-        <h2>Sign up</h2>
+        <h2>Yo, Thanks for signing up.</h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
@@ -19,7 +19,7 @@
             <%= f.email_field :email, autofocus: true %>
           </div>
           <div class="field">
-            <%= f.label "Name. What your mom calls u :)" %><br />
+            <%= f.label :name %> - What your mom calls u :)<br />
             <%= f.text_field :name, autofocus: true %>
           </div>
           <div class="field">
@@ -36,11 +36,11 @@
           </div>
 
           <div class="field">
-            <%= f.label "City you are now staying(I mean like where u hangout alot )" %><br />
+            <%= f.label :city %> - where you are now staying (I mean like where u hangout alot )<br />
             <%= f.text_field :city %>
           </div>
           <div class="field">
-            <%= f.label "Photo. No need to upload now, but I kinda want to see your face too. You can see mine." %><br />
+            <%= f.label :photo %> No need to upload now, but I kinda want to see your face too. You can see mine.<br />
             <%= f.file_field :photo  %>
           </div>
 <br>
