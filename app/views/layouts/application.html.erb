@@ -20,11 +20,13 @@
     </div>
     <% end %>
 
+
+    <% unless current_page?(root_path) %>
     <%= render 'layouts/header'; %>
 
-    <!-- <% unless current_page?(root_path) %> -->
 
-    <!-- <% end %> -->
+
+    <% end %>
 
 
 

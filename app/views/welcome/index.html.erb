@@ -1,7 +1,7 @@
 <% unless student_signed_in? %>
 
 <% else %>
-  <%= render 'layouts/header'; %>
+<%= render 'layouts/header'; %>
 
 <% end %>
 
@@ -19,7 +19,7 @@
         <nav class = "cf">
           <ul class = "cf">
             <% unless student_signed_in? %>
-              <li><%= link_to "Explore City&School", "/students/" %></li>
+              <li><%= link_to "Explore", "/students/" %></li>
               <li><%= link_to "Log In", new_student_session_path %></li>
               <li><%= link_to "Sign Up", new_student_registration_path %></li>
 
@@ -32,7 +32,8 @@
 
   <div class="wrapper_skinny">
     <h1>Welcome! this site is for connecting exchange and local students!</h1>
-    <br/><br/>
+
+    <!-- <div class="button_welcome"> <%= link_to "Explore", "/students/" %></div> -->
 
   </div>
 </div>
