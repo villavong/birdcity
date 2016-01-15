@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :students
 
-  root 'welcome#index'
+  root 'students#index'
 
   authenticated :student do
     root to: "students#index", as: :authenticated_root
