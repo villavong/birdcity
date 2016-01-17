@@ -23,6 +23,11 @@
           font-size: 1rem;
           font-weight: 700;
           color: #2C3135; }
+        #podcasts ul li .podcast_overview h3 {
+          margin: 0;
+          font-size: 1rem;
+          font-weight: 400;
+          color: #2C3135; }
         #podcasts ul li .podcast_overview .episode_count {
           color: #a9b1b7;
           font-size: .9rem;
