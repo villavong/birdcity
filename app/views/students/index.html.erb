@@ -36,7 +36,7 @@
   </p>
 <% end %>
 </div>
-</br>
+<%= will_paginate @students, previous_label: "Previous", next_label: "Next" %>
 </br>
 <div id="podcasts" class="cf">
   <div class="wrapper_wide">
@@ -88,5 +88,3 @@
 
 
 </div>
-
-<%= will_paginate @students, previous_label: "Previous", next_label: "Next" %>
