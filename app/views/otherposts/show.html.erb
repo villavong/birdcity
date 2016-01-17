@@ -6,6 +6,7 @@
   </div>
 </div>
 
+<% @otherposts.each do |otherpost| %>
 
 
 <div class="wrapper">
@@ -43,6 +44,9 @@
         <%= link_to "Edit Post", edit_otherpost_path(@otherpost), class: "button" %>
 
     <% end %>
+    <% end %>
+
+
 
 
   </div>

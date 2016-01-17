@@ -1,18 +1,24 @@
 <div class="comment cf">
   <div class="content">
     <p class="comment_content">
+    <% @eastcomments.each do |eastcomment| %>
+
       <%= markdownify eastcomment.comment %>
     </p>
     <p class="comment_author">
-      <%= link_to eastcomment.student.email, eastcomment.student %>
-    </p>
-  </div>
-  <div id="edit_button">
-    <% if current_student && eastcomment.student == current_student %>
-      <%= link_to "Edit", edit_eastpost_eastcomment_path(eastcomment.eastpost, eastcomment) %>
-      <%= link_to "Delete", [eastcomment.eastpost, eastcomment], method: :delete, data: { confirm: "Are you sure?" } %>
 
+        <%= link_to eastcomment.student.email, eastcomment.student %>
+      </p>
+    </div>
+    <div id="edit_button">
+      <% if current_student && eastcomment.student == current_student %>
+        <%= link_to "Edit", edit_eastpost_eastcomment_path(eastcomment.eastpost, eastcomment) %>
+        <%= link_to "Delete", [eastcomment.eastpost, eastcomment], method: :delete, data: { confirm: "Are you sure?" } %>
+
+      <% end %>
     <% end %>
+
+
 
 
 
