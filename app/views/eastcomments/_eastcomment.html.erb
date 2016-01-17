@@ -2,11 +2,11 @@
   <div class="content">
     <p class="comment_content">
 
-      <%= markdownify @eastcomment.comment %>
+      <%= markdownify eastcomment.comment %>
     </p>
     <p class="comment_author">
 
-        <%= link_to @eastcomment.student.email, @eastcomment.student %>
+        <%= link_to eastcomment.student.email, eastcomment.student %>
       </p>
     </div>
     <div id="edit_button">
