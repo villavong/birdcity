@@ -1,6 +1,5 @@
 class OsakapostsController < ApplicationController
   before_action :require_permission, only: [:edit, :update, :destroy]
-
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_student!, only: [:new, :create, :show]
 

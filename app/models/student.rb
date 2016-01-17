@@ -16,6 +16,9 @@ class Student < ActiveRecord::Base
   has_many :tokyoposts, :dependent => :delete_all
   has_many :tokyocomments
 
+  has_many :osakaposts, :dependent => :delete_all
+  has_many :osakacomments
+
   has_many :eastposts, :dependent => :delete_all
   has_many :eastcomments
 

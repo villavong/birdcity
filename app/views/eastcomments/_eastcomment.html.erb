@@ -1,7 +1,6 @@
 <div class="comment cf">
   <div class="content">
     <p class="comment_content">
-    <% @eastcomments.each do |eastcomment| %>
 
       <%= markdownify eastcomment.comment %>
     </p>
@@ -16,7 +15,6 @@
         <%= link_to "Delete", [eastcomment.eastpost, eastcomment], method: :delete, data: { confirm: "Are you sure?" } %>
 
       <% end %>
-    <% end %>
 
 
 
