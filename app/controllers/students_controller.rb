@@ -7,9 +7,9 @@ class StudentsController < ApplicationController
 
     def index
       if params[:search]
-        @students = Student.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
+        @students = Student.search(params[:search]).paginate(:page => params[:page], :per_page => 15)
       else
-        @students = Student.all.paginate(:page => params[:page], :per_page => 20)
+        @students = Student.all.paginate(:page => params[:page], :per_page => 15)
       end
     end
 
