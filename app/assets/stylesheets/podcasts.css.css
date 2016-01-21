@@ -40,7 +40,7 @@
 #podcast_show #show_banner {
   background: #2C3135;
   text-align: center;
-  padding: 1.7em 15%; }
+  padding: 1.7em 0; }
   #podcast_show #show_banner h1 {
     font-size: 4rem;
     font-weight: 300;

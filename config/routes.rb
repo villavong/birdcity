@@ -51,6 +51,16 @@ Rails.application.routes.draw do
   resources :otherposts do
     resources :othercomments
   end
+  resources :chinaposts do
+    resources :chinacomments
+  end
+  resources :vietposts do
+    resources :vietcomments
+  end
+  resources :thaiposts do
+    resources :thaicomments
+  end
+
 
   get 'beppupost/index'
 
