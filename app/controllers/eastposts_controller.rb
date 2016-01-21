@@ -12,7 +12,7 @@ class EastpostsController < ApplicationController
   end
 
   def new
-    @eastpost = current_student.eastposts.build
+    @eastpost =  current_student.eastposts.build
   end
   def create
     @eastpost = current_student.eastposts.build(post_params)

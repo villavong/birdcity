@@ -1,0 +1,55 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @thaipost.title %>
+    </h1>
+    <%= image_tag @thaipost.photo.url(:medium) %>
+    <h5>
+      Author: <%= link_to @thaipost.student.email, @thaipost.student %>
+    </h5>
+    <p>
+      <%= markdownify @thaipost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @thaipost.thaicomments.count %>
+      Comments
+    </h2>
+        <%= render @thaipost.thaicomments %>
+        <h3>Reply to thread</h3>
+        <%= render "thaicomments/form" %>
+    </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Back", thaiposts_path, class: "button" %>
+
+    <%= link_to "New Post", new_thaipost_path, class: "button button_highlight" %>
+    <% if current_student && @thaipost.student == current_student %>
+        <%= link_to "Delete Post", thaipost_path(@thaipost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+        <%= link_to "Edit Post", edit_thaipost_path(@thaipost), class: "button" %>
+    <% end %>
+
+
+
+
+    <div class="wrapper_skinny">
+  	</div>
+  </div>
+
+
+</div>

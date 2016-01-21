@@ -1,0 +1,51 @@
+
+
+<div id="podcast_show">
+	<div id="show_banner">
+		<div class="wrapper_wide">
+			<br>
+								<h1>
+                Yo Japan, What're you up to?
+                </h1>
+								<p class="description"></p>
+
+		</div>
+	</div>
+	<br><br>
+	<div class="wrapper_skinny">
+		<div class="cf">
+			<%= link_to "New Post", new_chinapost_path, class: "button button_highlight" %>
+
+		</div>
+	</div>
+
+	<div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+				<% @chinaposts.each do |chinapost| %>
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<%= link_to image_tag(chinapost.photo.url(:medium)), chinapost %>
+
+						</div>
+						<div class="episode_overview">
+							<h2><%= link_to chinapost.title, chinapost %>, Comment : <%= chinapost.chinacomments.count %></h2>
+							<p class="description"><%= truncate(chinapost.content, length: 300) %></p>
+							<p class="description">Written By <%= link_to chinapost.student.email, chinapost.student %>, <%= time_ago_in_words(chinapost.created_at)  %> ago, <%= chinapost.chinacomments.count %> comments </p>
+
+
+
+
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="comment">
+	<div id="edit_button">
+	</div>
+</div>
+<%= will_paginate @chinaposts, previous_label: "Previous", next_label: "Next" %>

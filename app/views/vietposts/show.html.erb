@@ -1,0 +1,55 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @vietpost.title %>
+    </h1>
+    <%= image_tag @vietpost.photo.url(:medium) %>
+    <h5>
+      Author: <%= link_to @vietpost.student.email, @vietpost.student %>
+    </h5>
+    <p>
+      <%= markdownify @vietpost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @vietpost.vietcomments.count %>
+      Comments
+    </h2>
+        <%= render @vietpost.vietcomments %>
+        <h3>Reply to thread</h3>
+        <%= render "vietcomments/form" %>
+    </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Back", vietposts_path, class: "button" %>
+
+    <%= link_to "New Post", new_vietpost_path, class: "button button_highlight" %>
+    <% if current_student && @vietpost.student == current_student %>
+        <%= link_to "Delete Post", vietpost_path(@vietpost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+        <%= link_to "Edit Post", edit_vietpost_path(@vietpost), class: "button" %>
+    <% end %>
+
+
+
+
+    <div class="wrapper_skinny">
+  	</div>
+  </div>
+
+
+</div>

@@ -1,0 +1,18 @@
+<div class="comment cf">
+  <div class="content">
+    <p class="comment_content">
+      <%= markdownify chinacomment.comment %>
+    </p>
+    <p class="comment_author">
+      <%= link_to chinacomment.student.email, chinacomment.student %>
+    </p>
+  </div>
+  <div id="edit_button">
+    <% if current_student && chinacomment.student == current_student %>
+      <%= link_to "Edit", edit_chinapost_chinacomment_path(chinacomment.chinapost, chinacomment) %>
+      <%= link_to "Delete", [chinacomment.chinapost, chinacomment], method: :delete, data: { confirm: "Are you sure?" } %>
+
+    <% end %>
+
+  </div>
+</div>

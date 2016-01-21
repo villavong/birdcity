@@ -22,11 +22,13 @@
 
     <%= render 'layouts/header'; %>
 
-    <!-- <% unless current_page?(root_path) %> -->
+
+    <% unless current_page?(root_path) %>
+
+    <%= render 'layouts/footer'; %>
 
 
-
-    <!-- <% end %> -->
+    <% end %>
 
 
 
@@ -41,7 +43,6 @@
   });
 
 </script>
-<%= render 'layouts/footer'; %>
 
 
 <br>

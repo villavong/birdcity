@@ -1,0 +1,2 @@
+module ThaipostsHelper
+end

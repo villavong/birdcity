@@ -1,0 +1,2 @@
+module ChinapostsHelper
+end

@@ -1,0 +1,18 @@
+<div class="comment cf">
+  <div class="content">
+    <p class="comment_content">
+      <%= markdownify vietcomment.comment %>
+    </p>
+    <p class="comment_author">
+      <%= link_to vietcomment.student.email, vietcomment.student %>
+    </p>
+  </div>
+  <div id="edit_button">
+    <% if current_student && vietcomment.student == current_student %>
+      <%= link_to "Edit", edit_vietpost_vietcomment_path(vietcomment.vietpost, vietcomment) %>
+      <%= link_to "Delete", [vietcomment.vietpost, vietcomment], method: :delete, data: { confirm: "Are you sure?" } %>
+
+    <% end %>
+
+  </div>
+</div>

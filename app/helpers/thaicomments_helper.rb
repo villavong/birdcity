@@ -1,0 +1,2 @@
+module ThaicommentsHelper
+end

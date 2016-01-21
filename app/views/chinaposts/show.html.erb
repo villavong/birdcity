@@ -1,0 +1,55 @@
+<div id="podcast_show">
+  <div id="show_banner">
+    <div class="wrapper_skinny">
+      <h1>Share What's Happening!!</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div id="post_content">
+
+    <h1>
+      Title: <%= @chinapost.title %>
+    </h1>
+    <%= image_tag @chinapost.photo.url(:medium) %>
+    <h5>
+      Author: <%= link_to @chinapost.student.email, @chinapost.student %>
+    </h5>
+    <p>
+      <%= markdownify @chinapost.content %>
+    </p>
+    <div id="comments">
+    <h2>
+      <%= @chinapost.chinacomments.count %>
+      Comments
+    </h2>
+        <%= render @chinapost.chinacomments %>
+        <h3>Reply to thread</h3>
+        <%= render "chinacomments/form" %>
+    </div>
+
+
+    <br/>
+    <hr/>
+    <br/>
+    <%= link_to "Back", chinaposts_path, class: "button" %>
+
+    <%= link_to "New Post", new_chinapost_path, class: "button button_highlight" %>
+    <% if current_student && @chinapost.student == current_student %>
+        <%= link_to "Delete Post", chinapost_path(@chinapost), method: :delete, data: { confirm: "Are you sure you want to do this?" }, class: "button" %>
+
+        <%= link_to "Edit Post", edit_chinapost_path(@chinapost), class: "button" %>
+    <% end %>
+
+
+
+
+    <div class="wrapper_skinny">
+  	</div>
+  </div>
+
+
+</div>

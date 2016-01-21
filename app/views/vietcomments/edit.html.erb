@@ -1,0 +1,11 @@
+<div class="wrapper">
+
+  <h1>Edit Reply</h1>
+  <%= simple_form_for([@vietpost, @vietcomment]) do |f| %>
+
+    <%= f.input :comment %>
+    <br><br>
+    <%= f.submit "Update Comment" %>
+  <% end %>
+
+</div>

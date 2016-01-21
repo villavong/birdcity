@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113060024) do
+ActiveRecord::Schema.define(version: 20160121052009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,31 @@ ActiveRecord::Schema.define(version: 20160113060024) do
   end
 
   add_index "beppuposts", ["student_id"], name: "index_beppuposts_on_student_id", using: :btree
+
+  create_table "chinacomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "chinapost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "chinacomments", ["chinapost_id"], name: "index_chinacomments_on_chinapost_id", using: :btree
+  add_index "chinacomments", ["student_id"], name: "index_chinacomments_on_student_id", using: :btree
+
+  create_table "chinaposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "chinaposts", ["student_id"], name: "index_chinaposts_on_student_id", using: :btree
 
   create_table "eastcomments", force: :cascade do |t|
     t.text     "comment"
@@ -271,6 +296,31 @@ ActiveRecord::Schema.define(version: 20160113060024) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+  create_table "thaicomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "thaipost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "thaicomments", ["student_id"], name: "index_thaicomments_on_student_id", using: :btree
+  add_index "thaicomments", ["thaipost_id"], name: "index_thaicomments_on_thaipost_id", using: :btree
+
+  create_table "thaiposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "thaiposts", ["student_id"], name: "index_thaiposts_on_student_id", using: :btree
+
   create_table "tokyocomments", force: :cascade do |t|
     t.text     "comment"
     t.integer  "tokyopost_id"
@@ -296,9 +346,37 @@ ActiveRecord::Schema.define(version: 20160113060024) do
 
   add_index "tokyoposts", ["student_id"], name: "index_tokyoposts_on_student_id", using: :btree
 
+  create_table "vietcomments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "vietpost_id"
+    t.integer  "student_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "vietcomments", ["student_id"], name: "index_vietcomments_on_student_id", using: :btree
+  add_index "vietcomments", ["vietpost_id"], name: "index_vietcomments_on_vietpost_id", using: :btree
+
+  create_table "vietposts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "vietposts", ["student_id"], name: "index_vietposts_on_student_id", using: :btree
+
   add_foreign_key "beppucomments", "beppuposts"
   add_foreign_key "beppucomments", "students"
   add_foreign_key "beppuposts", "students"
+  add_foreign_key "chinacomments", "chinaposts"
+  add_foreign_key "chinacomments", "students"
+  add_foreign_key "chinaposts", "students"
   add_foreign_key "eastcomments", "eastposts"
   add_foreign_key "eastcomments", "students"
   add_foreign_key "eastposts", "students"
@@ -315,7 +393,13 @@ ActiveRecord::Schema.define(version: 20160113060024) do
   add_foreign_key "southcomments", "students"
   add_foreign_key "southposts", "students"
   add_foreign_key "studentcomments", "students"
+  add_foreign_key "thaicomments", "students"
+  add_foreign_key "thaicomments", "thaiposts"
+  add_foreign_key "thaiposts", "students"
   add_foreign_key "tokyocomments", "students"
   add_foreign_key "tokyocomments", "tokyoposts"
   add_foreign_key "tokyoposts", "students"
+  add_foreign_key "vietcomments", "students"
+  add_foreign_key "vietcomments", "vietposts"
+  add_foreign_key "vietposts", "students"
 end
