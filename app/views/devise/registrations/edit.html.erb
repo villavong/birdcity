@@ -65,7 +65,7 @@
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
-
+              <br><br><br>
               <div class="field">
                 <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
                 <%= f.password_field :password, autocomplete: "off" %>
@@ -75,6 +75,7 @@
                 <%= f.label :password_confirmation %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "off" %>
               </div>
+              <br><br>
 
               <div class="field">
                 <%= f.label :current_password %> 現在のパスワード.<i>(we need your current password to confirm your changes)</i><br />
