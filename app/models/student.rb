@@ -60,7 +60,11 @@ class Student < ActiveRecord::Base
       else
         all
       end
-    end
+  end
+
+
+
+
 
   def birdtype
     if self.beppuposts.count + self.eastposts.count + self.southposts.count + self.otherposts.count  <= 2
