@@ -1,21 +1,21 @@
 /*
 Error: Invalid US-ASCII character "\xE2"
-        on line 264 of /Users/Sobyungwook/city/birdcity/app/assets/stylesheets/application.css.scss
+        on line 269 of /Users/Sobyungwook/city/birdcity/app/assets/stylesheets/application.css.scss
 
-259:   border: 1px solid darken($light, 5%);
-260:   border-radius: .35rem;
-261:   margin-top: .5rem;
-262: }
-263: 
-264: input[type=”file”] {
-265:   margin-top: .5rem;
-266: }
-267: 
-268: textarea {
-269:   height: 8rem;
+264:   border: 1px solid darken($light, 5%);
+265:   border-radius: .35rem;
+266:   margin-top: .5rem;
+267: }
+268: 
+269: input[type=”file”] {
+270:   margin-top: .5rem;
+271: }
+272: 
+273: textarea {
+274:   height: 8rem;
 
 Backtrace:
-/Users/Sobyungwook/city/birdcity/app/assets/stylesheets/application.css.scss:264
+/Users/Sobyungwook/city/birdcity/app/assets/stylesheets/application.css.scss:269
 /Applications/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1323:in `rescue in block in find_encoding_error'
 /Applications/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1320:in `block in find_encoding_error'
 /Applications/Koala 2.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/util.rb:1319:in `each'
@@ -37,4 +37,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 264 of /Users/Sobyungwook/city/birdcity/app/assets/stylesheets/application.css.scss\A \A 259:   border: 1px solid darken($light, 5%);\A 260:   border-radius: .35rem;\A 261:   margin-top: .5rem;\A 262: }\A 263: \A 264: input[type=”file”] {\A 265:   margin-top: .5rem;\A 266: }\A 267: \A 268: textarea {\A 269:   height: 8rem;"; }
+  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 269 of /Users/Sobyungwook/city/birdcity/app/assets/stylesheets/application.css.scss\A \A 264:   border: 1px solid darken($light, 5%);\A 265:   border-radius: .35rem;\A 266:   margin-top: .5rem;\A 267: }\A 268: \A 269: input[type=”file”] {\A 270:   margin-top: .5rem;\A 271: }\A 272: \A 273: textarea {\A 274:   height: 8rem;"; }

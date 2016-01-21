@@ -5,7 +5,7 @@
 		<div class="wrapper_wide">
 			<br>
 								<h1>
-									Yo Osaka, What're you up to? 
+									Yo Osaka, What're you up to?
 
                 </h1>
 								<p class="description"></p>
@@ -42,6 +42,19 @@
 			</ul>
 		</div>
 	</div>
+</div>
+
+<div class="wrapper_short">
+
+<h4>Search for Title</h4>
+
+<%= form_tag('/osakaposts', method: :get) do %>
+  <p>
+    <%= text_field_tag :search, nil, placeholder: "Search" %>
+    <br><br>
+    <p><%= submit_tag("Search") %> </p>
+  </p>
+<% end %>
 </div>
 
 <div class="comment">
