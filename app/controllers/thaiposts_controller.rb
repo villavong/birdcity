@@ -4,7 +4,11 @@ class ThaipostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_student!, only: [:new, :create, :show]
   def index
-    @thaiposts = Thaipost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    if params[:search]
+      @thaiposts = Thaipost.search(params[:search]).paginate(:page => params[:page], :per_page => 25)
+    else
+      @thaiposts = Thaipost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    end
   end
 
   def show

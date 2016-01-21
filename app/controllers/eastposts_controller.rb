@@ -5,7 +5,11 @@ class EastpostsController < ApplicationController
 	before_action :authenticate_student!, only: [:new, :create, :show]
 
   def index
-    @eastposts = Eastpost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    if params[:search]
+      @eastposts = Eastpost.search(params[:search]).paginate(:page => params[:page], :per_page => 25)
+    else
+      @eastposts = Eastpost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    end
   end
 
   def show

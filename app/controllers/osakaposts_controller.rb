@@ -4,7 +4,11 @@ class OsakapostsController < ApplicationController
   before_action :authenticate_student!, only: [:new, :create, :show]
 
   def index
-    @osakaposts = Osakapost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    if params[:search]
+      @osakaposts = Osakapost.search(params[:search]).paginate(:page => params[:page], :per_page => 25)
+    else
+      @osakaposts = Osakapost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    end
   end
 
   def show

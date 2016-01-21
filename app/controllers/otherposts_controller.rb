@@ -5,7 +5,11 @@ class OtherpostsController < ApplicationController
 
 
   def index
-    @otherposts = Otherpost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    if params[:search]
+      @otherposts = Otherpost.search(params[:search]).paginate(:page => params[:page], :per_page => 25)
+    else
+      @otherposts = Otherpost.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    end
   end
 
   def show
