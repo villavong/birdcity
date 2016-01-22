@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :students
+
+
+  devise_for :students, controllers: {registrations: 'registrations'}
+
+
 
   root 'students#index'
 
