@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
-  before_action :authenticate_student!, except: [:index]
+  # before_action :authenticate_student!, except: [:index]
 
-  # before_action :find_student, only: [:show]
+  before_action :find_student, only: [:show]
 
 
 
