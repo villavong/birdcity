@@ -58,7 +58,7 @@
               <br><br><br>
 
               <div class="field">
-                <%= f.label "Your Photo" %><br />
+                <%= f.label "Your Profile Photo" %><br />
                 <%= f.file_field :photo  %>
               </div>
 
@@ -71,7 +71,8 @@
 
 
 
-              <br><br><br>
+              <br><br><br><br>
+              <h3>Change Password</h3>
               <div class="field">
                 <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
                 <%= f.password_field :password, autocomplete: "off" %>
@@ -81,7 +82,11 @@
                 <%= f.label :password_confirmation %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "off" %>
               </div>
-              <br><br>  <br><br>
+              <br><br>  <br><br><br><br>
+
+
+
+            <h2>PUT CURRENT PASSWORD BEFORE SAVE!!</h2>
 
 
               <div class="field">
