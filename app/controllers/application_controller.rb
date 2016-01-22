@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :name, :school, :major, :city, :introduction, :nationality, :photo, :work)}
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password, :name, :school, :major, :city, :introduction, :nationality, :photo, :work)}
   end
+
+  def update_resource(resource, params)
+   binding.pry
+   resource.update_without_password(params)
+  end
 end

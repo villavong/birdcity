@@ -10,11 +10,5 @@ class RegistrationsController < Devise::RegistrationsController
     params.requrie(:student).permit(:email, :password, :password_confirmation, :current_password, :name, :school, :major, :city, :nationality)
   end
 
-  protected
-
-  def update_resource(resource, params)
-   binding.pry
-   resource.update_without_password(params)
-  end
 
 end
