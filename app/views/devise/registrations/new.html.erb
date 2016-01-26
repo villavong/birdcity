@@ -10,14 +10,15 @@
 
         <h3>Yo, Thanks for signing up. <br> Hope this website helps you in making new friends.</h3>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
           <div class="field">
-          <%= f.label :email %> (It can be anything, but .edu or .ac is preferred for the purpose of this site, lol)
+          <%= f.label "School" %> Email (It can be anything, but .edu or .ac is preferred for the purpose of this site, lol)
             <br />
             <%= f.email_field :email, autofocus: true %>
           </div>
+
           <div class="field">
             <%= f.label :name %> - What your mom calls u :)<br />
             <%= f.text_field :name %>
@@ -39,22 +40,100 @@
             <%= f.label :city %> - where you are now staying (I mean like where u live)<br />
             <%= f.text_field :city %>
           </div>
-          <div class="field">
-            <%= f.label :photo %>. No need to upload now, but I kinda want to see your face too. You can see mine.<br />
-            <%= f.file_field :photo  %>
-          </div>
-<br>
 
-            <h3>By Signing up, your email and info will be shared in ExploreCity&School Page.</h3>
+          <br><br><br>
+
+          <h2>Upload Profile :)</h2>
+          <div class="field">
+            <%= f.label :photo %><br />
+            <%= f.file_field :photo, class: "button"  %>
+          </div>
+
+
+          <br><br>
+
+
+            <!-- Missions you can complete. -->
+
+                <!-- Spending 1 hour around town together, Campus Tour -->
+
+                <br><br>
+
+
+            <h2>
+              Make Money by consulting people on following Topics!! <br>
+              Sell your spare hour and knowledge!!
+
+
+            </h2>
+
+            <h3>
+              <ul>
+                <li>How you got accepted to your university, or give Campus Tour</li><br>
+                <li>Planning their trip in your city <br>(where to eat, where to shop,
+                  search through internet together)</li><br>
+                <li>Go shopping together as translator</li>
+                <br>
+                <li>
+                  <%= f.association :missions, as: :check_boxes %>
+                </li>
+              </ul>
+
+            </h3>
+
+            <br><br>
+
+
+
+
+
+            <h2>
+
+            <div class="field">
+              <%= f.label "**" %>Compensation you WANT per hour
+          <br><br>
+              $<%= f.select :pay, [["10", "10"], ["15", "15"], ["20", "20"]], :include_blank => true %> <br><br>
+
+              OR Other Gift<br><br>
+              example: A cup of Coffee, Lunch, A Gift from your culture  </h2>
+          <%= f.input :gift, label: "Write Freely" %>  <br><br>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <h3>By Signing up, your email and info will be shared in Search Page.</h3>
 
 
           <div class="actions">
-            <%= f.submit "Sign up", class: "button button_highlight button_block"%>
+            <%= f.submit "Sign Up and Say Hi!", class: "button button_highlight button_block"%>
           </div>
           <br /><br />
         <% end %>
 
         <%= render "devise/shared/links" %>
+
+
+
+
+
+
+          <br>
+          <br>
+          <br>
+
+
+
 
   </div>
 </div>

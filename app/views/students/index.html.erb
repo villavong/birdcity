@@ -5,11 +5,11 @@
         <h1>
 					<!-- Welcome! this site is for connecting <br> exchange and local students! <br><br> -->
 					Make New Friends around the World! <br><br>
-					Send email before visiting <br>their city or school <br><br>
-					Buy Coffee or Lunch <br><br>
-					to ask more face to face <br>when you arrive!!
-
-										</h1>
+					Send email before visiting <br>their school or city <br><br>
+					Make money by selling your <br><br>
+					Experience and Knowledge <br>
+					about your school and city!!
+				</h1>
 
 		</div>
 	</div>
@@ -39,6 +39,10 @@
 
 <%= will_paginate @students, previous_label: "Previous", next_label: "Next" %>
 </br>
+
+
+
+
 <div id="podcasts" class="cf">
   <div class="wrapper_wide">
     <ul class="cf">
@@ -47,26 +51,12 @@
           <li>
 						<% if student.photo.present? %>
               <%= image_tag student.photo.url(:medium) %>
-
-
             <% end %>
-
-
-
-
-
-
             <div class="podcast_overview">
               <h2><%= student.name %></h2>
               <h2>Univ :</h2><h3><%= truncate(student.school, length: 20) %></h3>
               <h2>Now in :</h2><h3> <%= student.city %></h3>
 							<!-- <h2>Bird :</h2> <h3><%= birdtype_display(student.birdtype) %></h3> -->
-
-
-
-
-
-
             </div>
           </li>
         <% end %>
