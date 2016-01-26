@@ -67,11 +67,9 @@
 
 
               <h3>
-                <ul>
-                  <li>
-                    <%= f.association :missions, as: :check_boxes %>
-                  </li>
-                </ul>
+
+
+                    <%= f.association :missions, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title} <br>".html_safe  } %>
 
               </h3>
 
