@@ -1,4 +1,5 @@
 class MissionsController < ApplicationController
+  before_action :mission_params
   def index
   end
 
@@ -15,5 +16,11 @@ class MissionsController < ApplicationController
 
   def update
 
+  end
+
+  private
+
+  def mission_params
+    params.require(:mission).permit(:title)
   end
 end
