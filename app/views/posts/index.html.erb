@@ -1,0 +1,64 @@
+
+
+<div id="podcast_show">
+	<div id="show_banner">
+		<div class="wrapper_wide">
+			<br>
+								<h1>
+                Yo China, What're you up to?
+                </h1>
+								<p class="description"></p>
+
+		</div>
+	</div>
+	<br><br>
+	<div class="wrapper_skinny">
+		<div class="cf">
+			<%= link_to "New Post", new_post_path, class: "button button_highlight" %>
+
+		</div>
+	</div>
+
+	<div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+				<% @posts.each do |post| %>
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<%= link_to image_tag(post.photo.url(:medium)), post %>
+
+						</div>
+						<div class="episode_overview">
+							<h2><%= link_to post.title, post %>, Comment : <%= post.chinacomments.count %></h2>
+							<p class="description"><%= truncate(post.content, length: 300) %></p>
+							<p class="description">Written By <%= link_to post.student.email, post.student %>, <%= time_ago_in_words(post.created_at)  %> ago, <%= post.chinacomments.count %> comments </p>
+
+
+
+
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="wrapper_short">
+
+<h4>Search for Title</h4>
+
+<%= form_tag('/posts', method: :get) do %>
+  <p>
+    <%= text_field_tag :search, nil, placeholder: "Search" %>
+    <br><br>
+		<p><%= submit_tag("Search", class: "button button_highlight") %></p>
+  </p>
+<% end %>
+</div>
+
+<div class="comment">
+	<div id="edit_button">
+	</div>
+</div>
+<%= will_paginate @posts, previous_label: "Previous", next_label: "Next" %>

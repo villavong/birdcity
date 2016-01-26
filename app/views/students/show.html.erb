@@ -34,7 +34,7 @@
           </strong>
         </h2>
 
-    		<p>SELF INTRODUCTION <br><%= markdownify @student.introduction %></p>
+    		<p>　<strong>SELF INTRODUCTION</strong> <br><%= markdownify @student.introduction %></p>
 
   	</div>
 
@@ -53,6 +53,30 @@
 
 
 </div>
+
+<div id="posts" class="cf">
+  <div class="wrapper_wide">
+    <ul class="cf">
+      <% @posts.each do |post| %>
+        <%= link_to post do %>
+          <li>
+						<% if post.photo.present? %>
+              <%= image_tag post.photo.url(:medium) %>
+            <% end %>
+            <div class="post_overview">
+              <h2><%= post.title %></h2>
+              <h3><%= truncate(post.content, length: 20) %></h3>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+
+
 
 
 

@@ -37,6 +37,45 @@
       #podcasts ul li:hover .podcast_overview h2 {
         color: #EE7964; }
 
+#posts {
+  margin-top: 0rem;
+  padding-bottom: 3rem; }
+  #posts ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0; }
+    #posts ul li {
+      width: 22%;
+      float: left;
+      margin: 0 1% 3rem 1%;
+      -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+      border-radius: .35rem; }
+      #posts ul li img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: .35rem .35rem 0 0; }
+      #posts ul li .post_overview {
+        padding: 1.5rem 7.5%; }
+        #posts ul li .post_overview h2 {
+          margin: 0;
+          font-size: 1rem;
+          font-weight: 700;
+          color: #2C3135; }
+        #posts ul li .post_overview h3 {
+          margin: 0;
+          font-size: 1rem;
+          font-weight: 200;
+          color: #2C3135; }
+        #posts ul li .post_overview .episode_count {
+          color: #a9b1b7;
+          font-size: .9rem;
+          margin: .5rem 0 .25rem 0; }
+      #posts ul li:hover img {
+        opacity: .8; }
+      #posts ul li:hover .podcast_overview h2 {
+        color: #EE7964; }
+
 #podcast_show #show_banner {
   background: #2C3135;
   text-align: center;

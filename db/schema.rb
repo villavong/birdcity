@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160126094145) do
+ActiveRecord::Schema.define(version: 20160126171108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,17 @@ ActiveRecord::Schema.define(version: 20160126094145) do
   end
 
   add_index "chinaposts", ["student_id"], name: "index_chinaposts_on_student_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "post_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["student_id"], name: "index_comments_on_student_id", using: :btree
 
   create_table "eastcomments", force: :cascade do |t|
     t.text     "comment"
@@ -207,6 +218,20 @@ ActiveRecord::Schema.define(version: 20160126094145) do
   end
 
   add_index "otherposts", ["student_id"], name: "index_otherposts_on_student_id", using: :btree
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "student_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  add_index "posts", ["student_id"], name: "index_posts_on_student_id", using: :btree
 
   create_table "southcomments", force: :cascade do |t|
     t.text     "comment"
@@ -389,6 +414,8 @@ ActiveRecord::Schema.define(version: 20160126094145) do
   add_foreign_key "chinacomments", "chinaposts"
   add_foreign_key "chinacomments", "students"
   add_foreign_key "chinaposts", "students"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "students"
   add_foreign_key "eastcomments", "eastposts"
   add_foreign_key "eastcomments", "students"
   add_foreign_key "eastposts", "students"
@@ -402,6 +429,7 @@ ActiveRecord::Schema.define(version: 20160126094145) do
   add_foreign_key "othercomments", "otherposts"
   add_foreign_key "othercomments", "students"
   add_foreign_key "otherposts", "students"
+  add_foreign_key "posts", "students"
   add_foreign_key "southcomments", "southposts"
   add_foreign_key "southcomments", "students"
   add_foreign_key "southposts", "students"
