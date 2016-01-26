@@ -1,5 +1,5 @@
 class MissionsController < ApplicationController
-  before_action :mission_params
+  before_action :mission_params, only: [:create, :update, :edit, :destroy]
   def index
   end
 
