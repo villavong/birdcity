@@ -19,21 +19,21 @@
 
         <p class = "date">I can help you with these topics</p>
         <ul class = "date">
-          <li>How you got accepted to your university, or give Campus Tour</li><br>
-          <li>Planning their trip in your city <br>(where to eat, where to shop,
+          <li>How I got accepted to my university, or give Campus Tour</li><br>
+          <li>Planning your trip in my city <br>(where to eat, where to shop,
             search through internet together)</li><br>
           <li>Go shopping together as translator</li>
         </ul>
 
-        <p class = "date">$<%= @student.pay %> per hour</p>
+        <p class = "date">I will charge $<%= @student.pay %> per hour</p>
 
-        <p class = "date">OR <%= @student.gift %>, and etc</p>
-
-
+        <p class = "date">OR for other students, I just want <%= markdownify @student.gift %>, and etc</p>
 
 
 
-    		<p>Self Intro <br><%= markdownify @student.introduction %></p>
+
+
+    		<p>SELF INTRODUCTION <br><%= markdownify @student.introduction %></p>
 
   	</div>
 
