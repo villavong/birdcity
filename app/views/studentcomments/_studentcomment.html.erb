@@ -20,13 +20,11 @@
 
   </div>
   <div id="edit_button">
-    <% if current_student.id && studentcomment.author_id == current_student.id %>
 
       <%= link_to "Edit", edit_student_studentcomment_path(studentcomment.student, studentcomment) %>
       <%= link_to "Delete", [studentcomment.student, studentcomment], method: :delete, data: { confirm: "Are you sure?" } %>
 
 
-    <% end %>
 
   </div>
 </div>
