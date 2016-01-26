@@ -69,7 +69,7 @@
 
               <h3>Things you can help</h3>
               <h3>
-<%= f.association :missions, "mission_id[]", :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe } %>
+<%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe } %>
               </h3>
 
 
