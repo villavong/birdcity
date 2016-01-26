@@ -64,13 +64,15 @@
               </div>
 
 
+              <br><br>
+              <br><br>
 
-
+              <h3>Things you can help</h3>
               <h3>
-
-
 <%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe } %>
               </h3>
+
+
 
               <br><br>
 
@@ -102,6 +104,8 @@
 
 
               <br><br><br><br>
+
+          <div class="wrapper_skinny">
               <h3>Change Password<i>(leave blank if you don't want to change it)</i></h3>
               <div class="field">
                 <%= f.label :password %> <br />
