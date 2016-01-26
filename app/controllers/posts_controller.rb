@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     before_action :find_post, only: [:show, :edit, :update, :destroy]
     before_filter :require_permission, only: [:edit, :update, :destroy]
     before_action :authenticate_student!, only: [:new, :create]
+    before_action :find_student, only: [:show]
 
 
     def index
@@ -63,6 +64,17 @@ class PostsController < ApplicationController
       end
 
     end
+
+
+      def find_student
+        if params[:id].nil?
+          @student = current_student
+        else
+          @student = Student.find(params[:id])
+
+        end
+
+      end
 
 
 

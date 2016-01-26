@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
     end
 
     def show
-      @posts = Post.find(params[:student_id]).order("created_at DESC").paginate(:page => params[:page], :per_page => 24)
+      @posts = Post.where(params[:student_id]).order("created_at DESC").paginate(:page => params[:page], :per_page => 24)
     end
 
     private
