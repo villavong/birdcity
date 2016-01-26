@@ -11,7 +11,7 @@
 
             <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
 
 
@@ -69,7 +69,7 @@
               <h3>
 
 
-<!-- <%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe } %> -->
+<%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe } %>
               </h3>
 
               <br><br>
