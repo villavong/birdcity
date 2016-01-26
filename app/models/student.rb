@@ -10,7 +10,7 @@ class Student < ActiveRecord::Base
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
 
-  has_many :missions
+  has_many :missions, :dependent => :delete_all
 
   has_many :fukuokaposts, :dependent => :delete_all
   has_many :fukuokacomments
