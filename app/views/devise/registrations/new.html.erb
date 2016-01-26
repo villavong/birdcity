@@ -77,7 +77,7 @@
 
 
 
-              <%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe } %>
+              <%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe }, value_method: :id %>
 
 
             </h3>
