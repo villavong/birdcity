@@ -55,23 +55,26 @@
 
 
             <h2>
-              Make Money by consulting people on following Topics!! <br>
-              Sell your spare hour and knowledge!!
+                            Sell your spare time and story!!
+
+                            <br>
+
+                            If you are a student, you can advise people on these topics.
 
 
             </h2>
 
             <h3>
-              <!-- <ul>
+              <ul>
                 <li>How you got accepted to your university, or give Campus Tour</li><br>
                 <li>Planning their trip in your city <br>(where to eat, where to shop,
                   search through internet together)</li><br>
                 <li>Go shopping together as translator</li>
-              </ul> -->
+              </ul>
 
 
 
-              <%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe }, value_method: :id %>
+              <!-- <%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe }, value_method: :id %> -->
 
 
             </h3>
@@ -89,9 +92,9 @@
           <br><br>
               $<%= f.select :pay, [["10", "10"], ["15", "15"], ["20", "20"]] %> <br><br>
 
-              OR Other Gift<br><br>
+              <!-- OR Other Gift<br><br>
               example: A cup of Coffee, Lunch, A Gift from your culture  </h2>
-          <%= f.input :gift, label: "Write Freely" %>  <br><br>
+          <%= f.input :gift, label: "Write Freely" %>  <br><br> -->
 
 
             </div>

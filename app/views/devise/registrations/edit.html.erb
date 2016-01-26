@@ -67,10 +67,10 @@
               <br><br>
               <br><br>
 
-              <h3>Topics you can help</h3>
+              <!-- <h3>Topics you can help</h3>
               <h3>
                 <%= f.association :missions, :label => false, as: :check_boxes, collection: Mission.all, :label_method => lambda { |mission| "#{mission.title}<br><br>".html_safe }, value_method: :id %>
-              </h3>
+              </h3> -->
 
 
 
@@ -87,10 +87,10 @@
               <br><br>
                 $<%= f.select :pay, [["10", "10"], ["15", "15"], ["20", "20"]], :include_blank => true %> <br><br>
 
-                OR Other Gift<br><br>
+                <!-- OR Other Gift<br><br>
                 example: A cup of Coffee, Lunch, A Gift from your culture  </h2>
               <%= f.input :gift, label: "Write Freely" %>  <br><br>
-
+ -->
 
               </div>
 
