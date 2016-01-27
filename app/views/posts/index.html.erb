@@ -25,7 +25,10 @@
 				<% @posts.each do |post| %>
 					<li class="cf">
 						<div class="episode_thumbnail">
-							<%= link_to image_tag(post.photo.url(:medium)), post %>
+							<% if post.photo.present? %>
+
+								<%= link_to image_tag(post.photo.url(:medium)), post %>
+							<% end %>
 
 						</div>
 						<div class="episode_overview">
