@@ -32,8 +32,7 @@
 
 						</div>
 						<div class="episode_overview">
-							<h2><%= link_to post.title, post %></h2>
-							<h4><%= post.comments.count %></h4>
+							<h2>Title : <%= link_to post.title, post %></h2>
 							<p class="description"><%= truncate(post.content, length: 150) %></p>
 							<p class="description">Written By <%= link_to post.student.email, post.student %>, <%= time_ago_in_words(post.created_at)  %> ago, <%= post.comments.count %> comments </p>
 
