@@ -37,52 +37,19 @@
     		<p>　<strong>SELF INTRODUCTION</strong> <br><%= markdownify @student.introduction %></p>
 
   	</div>
-
-
   	<div id="student_photo">
       <div><%= image_tag @student.photo.url(:medium) %></div>
   	</div>
     <br><br>
-
-
-
-  </div>
-</div>
-<div class="wrapper_skinny">
-
-  <div class="cf">
-    <%= link_to "New Post", new_student_post_path(@student), id:'new', class: "button button_highlight" %>
   </div>
 </div>
 
 
-<%= will_paginate @posts, previous_label: "Previous", next_label: "Next" %>
-
-
-<div id="posts" class="cf">
-  <div class="wrapper_wide">
-    <ul class="cf">
-      <% @posts.each do |post| %>
-        <%= link_to post do %>
-          <li>
-						<% if post.photo.present? %>
-              <%= image_tag student.post.photo.url(:medium) %>
-            <% end %>
-            <div class="post_overview">
-              <h2><%= post.title %></h2>
-              <h3><%= truncate(post.content, length: 20) %></h3>
-            </div>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
 
 
 
 
-
-<div class="wrapper_skinny">
+<div class="wrapper">
     <div id="post_content">
       <div id="comments" class = "cf">
       <h2>

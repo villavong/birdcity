@@ -1,39 +1,30 @@
+<div id="podcasts" class="cf">
+
+  <div class="wrapper_wide">
+
+    <% if studentcomment.photo.present? %>
+      <%= studentcomment.photo %>
+    <% end %>
+  </div>
+</div>
+
+
 <div class="comment cf">
   <div class="content">
 
-    <div id="podcasts" class="cf">
+        <p class="comment_content">
+          <%= markdownify studentcomment.comment %>
+        </p>
+        <p class="comment_author">
+          <% if studentcomment.author_id == studentcomment.student_id %>
+              <%= studentcomment.author_email  %>
 
-      <div class="wrapper_wide">
+          <% elsif  %>
+              <%= link_to studentcomment.author_email, "/students/#{studentcomment.author_id}"  %>
 
+          <% end %>
 
-          <% studentcomment.photo %>
-
-
-      </div>
-    </div>
-
-
-
-
-
-
-    <p class="comment_content">
-      <%= markdownify studentcomment.comment %>
-    </p>
-    <p class="comment_author">
-
-
-
-
-      <% if studentcomment.author_id == studentcomment.student_id %>
-          <%= studentcomment.author_email  %>
-
-      <% elsif  %>
-          <%= link_to studentcomment.author_email, "/students/#{studentcomment.author_id}"  %>
-
-      <% end %>
-
-    </p>
+        </p>
 
 
 
@@ -43,8 +34,5 @@
 
       <%= link_to "Edit", edit_student_studentcomment_path(studentcomment.student, studentcomment) %>
       <%= link_to "Delete", [studentcomment.student, studentcomment], method: :delete, data: { confirm: "Are you sure?" } %>
-
-
-
   </div>
 </div>
