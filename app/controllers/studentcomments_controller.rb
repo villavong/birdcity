@@ -46,7 +46,7 @@ class StudentcommentsController < ApplicationController
     end
     def require_permission
       @studentcomment = Studentcomment.find(params[:id])
-      if current_student.id != @studentcomment.student_id
+      if current_student.id != @studentcomment.author_id
         redirect_to root_path, notice: "Sorry, you're not allowed"
       end
 
