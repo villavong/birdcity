@@ -1,5 +1,4 @@
-
-<%= simple_form_for ([@student, @post]) do |f| %>
+<%= form_for ([@student, @post]) do |f| %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
