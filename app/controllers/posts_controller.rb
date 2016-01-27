@@ -47,13 +47,10 @@ class PostsController < ApplicationController
     @student = Student.find(params[:student_id])
   end
   def require_permission
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:student_id])
     if current_student.id != @post.student_id
       redirect_to root_path, notice: "Sorry, you're not allowed"
     end
-
   end
-
-
 
 end
