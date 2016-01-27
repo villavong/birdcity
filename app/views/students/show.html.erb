@@ -54,18 +54,22 @@
 
 </div>
 
+
+<%= will_paginate @posts, previous_label: "Previous", next_label: "Next" %>
+
+
 <div id="posts" class="cf">
   <div class="wrapper_wide">
     <ul class="cf">
-      <% @student.each do |student| %>
-        <%= link_to student.post do %>
+      <% @posts.each do |post| %>
+        <%= link_to post do %>
           <li>
-						<% if student.post.photo.present? %>
+						<% if post.photo.present? %>
               <%= image_tag student.post.photo.url(:medium) %>
             <% end %>
             <div class="post_overview">
-              <h2><%= student.post.title %></h2>
-              <h3><%= truncate(studentpost.content, length: 20) %></h3>
+              <h2><%= post.title %></h2>
+              <h3><%= truncate(post.content, length: 20) %></h3>
             </div>
           </li>
         <% end %>
