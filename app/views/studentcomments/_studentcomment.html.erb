@@ -3,7 +3,8 @@
   <div class="wrapper_wide">
 
     <% if studentcomment.photo.present? %>
-      <%= studentcomment.photo %>
+      <%= image_tag studentcomment.photo.url(:medium) %>
+
     <% end %>
   </div>
 </div>
