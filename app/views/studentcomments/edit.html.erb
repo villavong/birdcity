@@ -3,7 +3,7 @@
   <h1>Edit Reply</h1>
   <%= simple_form_for([@student, @studentcomment]) do |f| %>
 
-    <%= f.input :comment, 'Review' %>
+    <%= f.input :comment, label: 'Review' %>
     <br><br>
     <%= f.submit "Update Comment" %>
   <% end %>
