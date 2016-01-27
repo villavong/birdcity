@@ -83,17 +83,14 @@
               <h2>
 
               <div class="field">
-                <%= f.label "**" %>Compensation you WANT per hour
-              <br><br>
-                $<%= f.select :pay, [["10", "10"], ["15", "15"], ["20", "20"]], :include_blank => true %> <br><br>
-
-                <!-- OR Other Gift<br><br>
-                example: A cup of Coffee, Lunch, A Gift from your culture  </h2>
-              <%= f.input :gift, label: "Write Freely" %>  <br><br>
- -->
-
+                      <%= f.label "**" %>Compensation you WANT per hour
+                    <br><br>
+                      $<%= f.select :pay, [["5", "5"],["10", "10"], ["15", "15"], ["20", "20"]], :include_blank => true %> <br><br>
               </div>
-
+              <div class="field">
+                <%= f.label "OR Other Gift" %><br>**Ex: A cup of Coffee, Lunch, A Gift from your culture  </h2>
+                <%= f.text_field :gift %>
+              </div>
 
 
 
