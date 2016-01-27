@@ -1,8 +1,8 @@
 <%= simple_form_for([@student, @student.studentcomments.build]) do |f| %>
-  <%= f.input :comment %>
+  <%= f.input :comment, lable: 'Reviews' %>
   <div class="field">
     <%= f.label "Upload Photo" %><br>
-    <%= f.file_field :photo %>
+    <%= f.file_field :photo, class: "button button_highlight button_block" %>
   </div>
-  <%= f.submit "Create Comment", class: "button button_highlight" %>
+  <%= f.submit "Create Comment", class: "button button_highlight button_block" %>
 <% end %>
