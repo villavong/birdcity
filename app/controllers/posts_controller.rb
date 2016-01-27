@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_student, only: [:edit, :update, :destroy]
   before_action :authenticate_student!, except: [:index, :show]
 
-  before_filter :require_permission, only: [:new, :edit, :update, :destroy]
+  # before_filter :require_permission, only: [:new, :edit, :update, :destroy]
 
   def new
     @post = current_student.posts.build
@@ -46,11 +46,11 @@ class PostsController < ApplicationController
   def find_student
     @student = Student.find(params[:student_id])
   end
-  def require_permission
-    @post = Post.find(params[:student_id])
-    if current_student.id != @post.student_id
-      redirect_to root_path, notice: "Sorry, you're not allowed"
-    end
-  end
+  # def require_permission
+  #   @post = Post.find(params[:student_id])
+  #   if current_student.id != @post.student_id
+  #     redirect_to root_path, notice: "Sorry, you're not allowed"
+  #   end
+  # end
 
 end
