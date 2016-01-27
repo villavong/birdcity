@@ -127,11 +127,10 @@ $buttonblue: #3B669E;
           border-bottom: none;
         }
         .episode_thumbnail {
-          width: 50%;
           float: left;
           img {
-            // width: 5rem;
-            // height: 5rem;
+            width: 25rem;
+            height: 25rem;
             max-width: 100%;
             margin-top: 1rem;
             border-radius: .3rem;

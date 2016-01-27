@@ -84,9 +84,10 @@
     #podcast_show #posts ul li:last-child {
       border-bottom: none; }
     #podcast_show #posts ul li .episode_thumbnail {
-      width: 50%;
       float: left; }
       #podcast_show #posts ul li .episode_thumbnail img {
+        width: 25rem;
+        height: 25rem;
         max-width: 100%;
         margin-top: 1rem;
         border-radius: .3rem; }
