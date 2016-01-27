@@ -23,12 +23,12 @@
     </p>
     <div id="comments">
     <h2>
-      <%= @post.chinacomments.count %>
+      <%= @post.commentcomments.count %>
       Comments
     </h2>
-        <%= render @post.chinacomments %>
+        <%= render @post.commentcomments %>
         <h3>Reply to thread</h3>
-        <%= render "chinacomments/form" %>
+        <%= render "comments/form" %>
     </div>
 
 
