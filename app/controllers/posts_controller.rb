@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   end
 
   def new
+    @student = Student.find(params[:student_id])
+
     @post = current_student.posts.build
   end
   def create

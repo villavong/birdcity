@@ -9,7 +9,7 @@ class StudentcommentsController < ApplicationController
       @student = Student.find(params[:student_id])
 
 
-  		@studentcomment = @student.studentcomments.create(params[:studentcomment].permit(:comment))
+  		@studentcomment = @student.studentcomments.create(params[:studentcomment].permit(:comment, :photo))
       @studentcomment.author_email = current_student.email
       @studentcomment.author_id = current_student.id
   		@studentcomment.save
@@ -33,7 +33,7 @@ class StudentcommentsController < ApplicationController
   	def update
   		@studentcomment = @student.studentcomments.find(params[:id])
 
-  		if @studentcomment.update(params[:studentcomment].permit(:comment))
+  		if @studentcomment.update(params[:studentcomment].permit(:comment, :photo))
   			redirect_to student_path(@student)
   		else
   			render 'edit'

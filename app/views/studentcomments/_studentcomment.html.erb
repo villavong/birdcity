@@ -1,9 +1,29 @@
 <div class="comment cf">
   <div class="content">
+
+    <div id="podcasts" class="cf">
+
+      <div class="wrapper_wide">
+
+
+          <% studentcomment.photo %>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
     <p class="comment_content">
       <%= markdownify studentcomment.comment %>
     </p>
     <p class="comment_author">
+
+
+
 
       <% if studentcomment.author_id == studentcomment.student_id %>
           <%= studentcomment.author_email  %>
