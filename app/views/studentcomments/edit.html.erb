@@ -5,7 +5,16 @@
 
     <%= f.input :comment, label: 'Review' %>
     <br><br>
-    <%= f.submit "Update Comment" %>
+
+    <div class="field">
+      <%= f.label "Upload Photo" %><br>
+      <%= f.file_field :photo %>
+    </div>
+
+    <br><br>
+
+
+    <%= f.submit "Update Comment",  class: "button button_highlight button_block" %>
   <% end %>
 
 </div>
