@@ -14,7 +14,7 @@
     <h1>
       Title: <%= @post.title %>
     </h1>
-    <% if student.photo.present? %>
+    <% if @post.photo.present? %>
 
       <%= image_tag @post.photo.url(:medium) %>
     <% end %>
