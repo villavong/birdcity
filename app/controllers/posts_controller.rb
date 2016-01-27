@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_student, only: [:edit, :update, :destroy]
   before_action :authenticate_student!, except: [:index, :show]
 
-  before_filter :require_permission, only: [:edit, :update, :destroy]
+  before_filter :require_permission, only: [:new, :edit, :update, :destroy]
 
   def new
     @post = current_student.posts.build
@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @student = Student.find(params[:student_id])
 
 
-    @post = @student.posts.create(params[:post].permit(:comment))
+    @post = @student.posts.build(params[:post].permit(:title, :content, :photo))
     @post.author_email = current_student.email
     @post.author_id = current_student.id
     @post.save
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   def update
     @post = @student.posts.find(params[:id])
 
-    if @post.update(params[:post].permit(:comment))
+    if @post.update(params[:post].permit(:title, :content, :photo))
       redirect_to student_path(@student)
     else
       render 'edit'
