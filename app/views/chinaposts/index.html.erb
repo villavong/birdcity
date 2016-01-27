@@ -29,7 +29,7 @@
 
 						</div>
 						<div class="episode_overview">
-							<h2><%= link_to chinapost.title, chinapost %>, Comment : <%= chinapost.chinacomments.count %></h2>
+							<h2><%= link_to chinapost.title, chinapost %></h2>
 							<p class="description"><%= truncate(chinapost.content, length: 300) %></p>
 							<p class="description">Written By <%= link_to chinapost.student.email, chinapost.student %>, <%= time_ago_in_words(chinapost.created_at)  %> ago, <%= chinapost.chinacomments.count %> comments </p>
 

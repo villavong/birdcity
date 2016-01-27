@@ -29,7 +29,7 @@
 
 						</div>
 						<div class="episode_overview">
-							<h2><%= link_to vietpost.title, vietpost %>, Comment : <%= vietpost.vietcomments.count %></h2>
+							<h2><%= link_to vietpost.title, vietpost %></h2>
 							<p class="description"><%= truncate(vietpost.content, length: 300) %></p>
 							<p class="description">Written By <%= link_to vietpost.student.email, vietpost.student %>, <%= time_ago_in_words(vietpost.created_at)  %> ago, <%= vietpost.vietcomments.count %> comments </p>
 
