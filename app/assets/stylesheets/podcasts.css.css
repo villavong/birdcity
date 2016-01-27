@@ -76,47 +76,47 @@
       #posts ul li:hover .podcast_overview h2 {
         color: #EE7964; }
 
-#podcast_show #posts ul {
+#podcast_show #feed ul {
   list-style: none;
   padding-left: 0; }
-  #podcast_show #posts ul li {
+  #podcast_show #feed ul li {
     border-bottom: 1px solid #d2d7da; }
-    #podcast_show #posts ul li:last-child {
+    #podcast_show #feed ul li:last-child {
       border-bottom: none; }
-    #podcast_show #posts ul li .episode_thumbnail {
+    #podcast_show #feed ul li .episode_thumbnail {
       float: left; }
-      #podcast_show #posts ul li .episode_thumbnail img {
+      #podcast_show #feed ul li .episode_thumbnail img {
         width: 25rem;
         height: 25rem;
         max-width: 100%;
         margin-top: 1rem;
         border-radius: .3rem; }
-    #podcast_show #posts ul li .episode_overview {
+    #podcast_show #feed ul li .episode_overview {
       width: 76.5%;
       float: left;
       margin-left: 1.5%; }
-    #podcast_show #posts ul li h2 {
+    #podcast_show #feed ul li h2 {
       margin: .1rem 0;
       padding: .2rem 0; }
-      #podcast_show #posts ul li h2 a {
+      #podcast_show #feed ul li h2 a {
         color: #2C3135;
         font-size: 1.3rem;
         margin: .2rem 0;
         padding: .2rem 0;
         text-decoration: none; }
-    #podcast_show #posts ul li .description {
+    #podcast_show #feed ul li .description {
       font-size: 0.8rem;
       color: #66717b;
       margin: none;
       padding: none; }
-    #podcast_show #posts ul li .authorized_links {
+    #podcast_show #feed ul li .authorized_links {
       font-weight: 700;
       font-size: 1rem; }
-      #podcast_show #posts ul li .authorized_links a {
+      #podcast_show #feed ul li .authorized_links a {
         color: #EE7964;
         margin-right: 1rem;
         text-decoration: none; }
-        #podcast_show #posts ul li .authorized_links a:hover {
+        #podcast_show #feed ul li .authorized_links a:hover {
           color: #f6b5a9; }
 
 #podcast_show #show_banner {
