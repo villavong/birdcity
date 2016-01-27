@@ -114,7 +114,67 @@ $buttonblue: #3B669E;
     }
   }
 }
-
+#podcast_show {
+  #posts {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      li {
+        // padding-bottom: 1rem;
+        border-bottom: 1px solid lighten($dark, 65%);
+        // margin-bottom: 1rem;
+        &:last-child {
+          border-bottom: none;
+        }
+        .episode_thumbnail {
+          width: 50%;
+          float: left;
+          img {
+            // width: 5rem;
+            // height: 5rem;
+            max-width: 100%;
+            margin-top: 1rem;
+            border-radius: .3rem;
+          }
+        }
+        .episode_overview {
+          width: 76.5%;
+          float: left;
+          margin-left: 1.5%;
+        }
+        h2 {
+          margin: .1rem 0;
+          padding: .2rem 0;
+          a {
+            color: $dark;
+            font-size: 1.3rem;
+            margin: .2rem 0;
+            padding: .2rem 0;
+            text-decoration: none;
+          }
+        }
+        .description  {
+          font-size: 0.8rem;
+          color: lighten($dark, 25%);
+          margin: none;
+          padding: none;
+        }
+        .authorized_links {
+          font-weight: 700;
+          font-size: 1rem;
+          a {
+            color: $highlight;
+            margin-right: 1rem;
+            text-decoration: none;
+            &:hover {
+              color: lighten($highlight, 15%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 #podcast_show {
   #show_banner{
     background: $dark;

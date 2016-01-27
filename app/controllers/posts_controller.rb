@@ -1,21 +1,28 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_filter :require_permission, only: [:edit, :update, :destroy]
+
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_student!, only: [:new, :create]
+
+  def index
+    if params[:search]
+      @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 25)
+    else
+      @posts = Post.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
+    end
+  end
 
   def show
   end
 
   def new
-    @student = Student.find(params[:student_id])
-
-    @post = current_student.posts.build
+    @post =  current_student.posts.build
   end
   def create
     @post = current_student.posts.build(post_params)
 
     if @post.save
-      redirect_to @student
+      redirect_to @post
     else
       render 'new'
     end
@@ -25,7 +32,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update (post_params)
-      redirect_to @student
+      redirect_to @post
     else
       render 'edit'
     end
@@ -35,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to student_posts_path
+    redirect_to posts_path
   end
 
   private
@@ -48,7 +55,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content, :photo)
   end
-
   def require_permission
     @post = Post.find(params[:id])
     if current_student.id != @post.student_id

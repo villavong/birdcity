@@ -19,9 +19,17 @@ Rails.application.routes.draw do
     resources :studentcomments
   end
 
-  resources :students do
-    resources :posts do
-      resources :comments
+
+
+
+
+
+
+
+
+
+  resources :posts do
+    resources :comments do
     end
   end
 
