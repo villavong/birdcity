@@ -4,7 +4,9 @@ class PostsController < ApplicationController
 
   before_filter :require_permission, only: [:edit, :update, :destroy]
 
-
+  def new
+    @post = current_student.posts.build
+  end
   def create
     @student = Student.find(params[:student_id])
 
