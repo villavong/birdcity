@@ -86,8 +86,8 @@
     #podcast_show #feed ul li .episode_thumbnail {
       float: left; }
       #podcast_show #feed ul li .episode_thumbnail img {
-        width: 20rem;
-        height: 20rem;
+        width: 45rem;
+        height: 45rem;
         max-width: 100%;
         margin-top: 1rem;
         border-radius: .3rem; }
