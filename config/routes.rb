@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :students
 
-  root 'welcome#index'
+  root 'students#index'
 
   authenticated :student do
     root to: "students#index", as: :authenticated_root
