@@ -4,6 +4,8 @@
 		<nav>
 			<ul>
 				<% unless student_signed_in? %>
+					<li><%= link_to "About", "/about/" %></li>
+
 					<li><%= link_to "Newsfeed", "/posts/" %></li>
 
 					<li><%= link_to "Search", "/students/" %></li>
@@ -13,6 +15,8 @@
 
 
 				<% else %>
+					<li><%= link_to "About", "/about/" %></li>
+
 					<li><%= link_to "Newsfeed", "/posts/" %></li>
 
 					<li><%= link_to "Search", "/students/" %></li>
