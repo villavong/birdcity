@@ -12,6 +12,7 @@ class Beppupost < ActiveRecord::Base
         # where("name @@ :q or description @@ :q or ship @@ :q", q: query)
         rank = <<-RANK
           ts_rank(to_tsvector(title), plainto_tsquery(#{sanitize(query)}))
+
         RANK
         where("title @@ :q", q: query).order("#{rank} desc")
       else

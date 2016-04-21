@@ -24,6 +24,7 @@ gem 'local_time', '~> 1.0.0'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'paypal-sdk-adaptivepayments'
 
 group :development, :test do
   gem 'byebug'

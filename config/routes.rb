@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :students do
     resources :studentcomments
   end
-  
+
   resources :about
 
 
