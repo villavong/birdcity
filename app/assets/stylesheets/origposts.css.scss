@@ -48,7 +48,7 @@ $buttonblue: #3B669E;
 	padding: 2em 5%;
 	border-radius: .5em;
 	img {
-		width: 45rem;
+		width: 25rem;
 		max-width: 100%;
 		border-radius: .3rem;
 	}
@@ -97,6 +97,9 @@ $buttonblue: #3B669E;
 			.comment_content {
 				margin: 0;
 				padding: 0;
+				color: #EE7964;
+
+
 			}
 			.comment_author {
 				color: $buttonblue;
@@ -219,6 +222,8 @@ $buttonblue: #3B669E;
 			.comment_content {
 				margin: 0;
 				padding: 0;
+				color: #EE7964;
+
 			}
 			.comment_author {
 				color: $buttonblue;

@@ -32,8 +32,7 @@
   padding: 2em 5%;
   border-radius: .5em; }
   #post_content img {
-    width: 20rem;
-    height: 20rem;
+    width: 45rem;
     max-width: 100%;
     border-radius: .3rem; }
   #post_content h1 {
@@ -41,6 +40,12 @@
     font-size: 1.5em;
     color: #3462AB;
     margin-top: 0; }
+  #post_content h5 {
+    color: #3B669E;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    float: right; }
   #post_content p {
     color: #3462AB;
     font-size: 1rem;
@@ -66,14 +71,17 @@
         margin-right: 2%; }
     #post_content #comments .comment .comment_content {
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      color: #EE7964; }
     #post_content #comments .comment .comment_author {
       color: #3B669E;
       margin-top: .5rem;
-      font-size: 0.6em;
-      font-weight: 300; }
+      font-size: 0.8em;
+      font-weight: 300;
+      text-decoration: none; }
     #post_content #comments .comment #edit_button {
-      padding-top: 1em; }
+      padding-top: 1em;
+      float: right; }
   #post_content #comments input[type="submit"] {
     background: #3B669E;
     border: none;
@@ -88,4 +96,103 @@
     border-radius: .2em;
     margin: 1em 0; }
 
-/*# sourceMappingURL=posts.css.css.map */
+#posts {
+  background: white;
+  padding: 2em 5%;
+  border-radius: .5em; }
+  #posts .post {
+    margin: 1em 0;
+    padding: 1em 0;
+    border-bottom: 1px solid #D1d1d1; }
+    #posts .post .title {
+      margin: 0; }
+      #posts .post .title a {
+        color: #397CAC;
+        text-decoration: none;
+        font-weight: 100;
+        font-size: 1.25rem; }
+    #posts .post .date {
+      margin-top: .25rem;
+      font-size: 0.9rem;
+      color: #B2BAC2; }
+
+.button {
+  background: #3B669E;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  padding: .5em 1em;
+  border-radius: 0.2em;
+  text-decoration: none;
+  margin-right: 2%; }
+
+#post_content_index {
+  background: #FFFFFF;
+  padding: 2em 5%;
+  border-radius: .5em; }
+  #post_content_index img {
+    width: 45rem;
+    height: 45rem;
+    max-width: 100%;
+    border-radius: .3rem; }
+  #post_content_index h1 {
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #3462AB;
+    margin-top: 0; }
+  #post_content_index h5 {
+    color: #3B669E;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    float: right; }
+  #post_content_index p {
+    color: #3462AB;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5; }
+  #post_content_index #comments .comment {
+    border-bottom: 1px solid #d1d1d1; }
+    #post_content_index #comments .comment .content {
+      width: 75%;
+      float: left; }
+    #post_content_index #comments .comment .buttons {
+      width: 25%;
+      float: left;
+      font-size: .8em;
+      text-align: right;
+      padding-top: 1.5em; }
+      #post_content_index #comments .comment .buttons a {
+        color: #397CAC;
+        border: 1px solid #397CAC;
+        padding: .5em 1em;
+        border-radius: 0.2em;
+        text-decoration: none;
+        margin-right: 2%; }
+    #post_content_index #comments .comment .comment_content {
+      margin: 0;
+      padding: 0;
+      color: #EE7964; }
+    #post_content_index #comments .comment .comment_author {
+      color: #3B669E;
+      margin-top: .5rem;
+      font-size: 0.8em;
+      font-weight: 300;
+      text-decoration: none; }
+    #post_content_index #comments .comment #edit_button {
+      padding-top: 1em;
+      float: right; }
+  #post_content_index #comments input[type="submit"] {
+    background: #3B669E;
+    border: none;
+    color: white;
+    font-weight: 100;
+    padding: .5em 1em;
+    border-radius: .2em; }
+  #post_content_index #comments textarea {
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid #d1d1d1;
+    border-radius: .2em;
+    margin: 1em 0; }
+
+/*# sourceMappingURL=origposts.css.css.map */
